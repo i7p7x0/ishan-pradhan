@@ -38,6 +38,7 @@ const About = () => {
       <div className="what-i-do-container">
         <h1>What I Do</h1>
         <AboutMyCanDos dos={MY_CAN_DOS} />
+        <hr />
       </div>
       <div className="about-me-for-developers-parent-container">
         {isDeveloper === "-1" ? (
@@ -67,7 +68,6 @@ const About = () => {
           <AboutMeForDevelopers />
         ) : null}
       </div>
-      <hr />
     </div>
   );
 };
