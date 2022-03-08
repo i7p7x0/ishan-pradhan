@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": ";ACAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC",
+    "sources": [
+        "root.scss",
+        "variables/_color-variables.scss",
+        "variables/_screen-size.scss",
+        "mixins/_mixins.scss",
+        "variables/_font-variables.scss"
+    ],
+    "names": [],
+    "file": "root.css"
+}

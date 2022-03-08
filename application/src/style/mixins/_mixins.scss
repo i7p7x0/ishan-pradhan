@@ -1,0 +1,25 @@
+/***************************************
+@mixin page-layout
+i. center page content
+ii.center page items
+iii.set page background color
+***************************************/
+@mixin page-layout {
+  background-color: $background-color-light-tertiary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-family: $font-family-primary;
+}
+
+@mixin page-layout-no-height {
+  background-color: $background-color-light-tertiary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 0 10%;
+  font-family: $font-family-primary;
+}

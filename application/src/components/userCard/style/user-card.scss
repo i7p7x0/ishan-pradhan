@@ -1,0 +1,51 @@
+@import "../../../style/root";
+
+.navbar-toggle-container {
+  background-color: $background-color-light-tertiary;
+}
+
+.canvas-container {
+  background-color: $background-color-light-secondary;
+  color: $font-color-light-primary;
+  font-weight: bold;
+  font-family: $font-family-primary;
+}
+
+.avatar-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-image {
+  height: 250px;
+  width: 250px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.avatar-name {
+  font-weight: bold;
+  margin-top: 10%;
+}
+
+.nav-link-content {
+  color: $font-color-light-primary;
+  margin-left: 10%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.nav-item-icon {
+  font-weight: bold;
+  font-size: 30px;
+  margin-right: 10%;
+}
+
+.nav-link-icons-only {
+  display: block;
+  text-align: center;
+}

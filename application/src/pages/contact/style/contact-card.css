@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/*
+This scss file contains variables for colors used throughout the components of this website,
+For Example: background color, text color, component color
+*/
+/*
+This scss file contains variables for screen sizes used in the website ,
+Reference : 
+
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+
+*/
+/***************************************
+@mixin page-layout
+i. center page content
+ii.center page items
+iii.set page background color
+***************************************/
+.contact-card-container {
+  background-color: #b8fff9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  padding: 0 10%;
+  font-family: "Roboto", sans-serif;
+  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-left-radius: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom-right-radius: 16px;
+  background-color: #212121;
+  margin-bottom: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.contact-card-icon {
+  color: #ffffff;
+  font-size: 45px;
+}
+
+.contact-card-body {
+  padding-bottom: 10%;
+}
+
+.contact-card-header-content {
+  color: #42c2ff;
+}
+
+.contact-card-icon-true {
+  color: #77d970;
+}
+
+.contact-card-icon-false {
+  color: #ff0075;
+}
+/*# sourceMappingURL=contact-card.css.map */

@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/*
+This scss file contains variables for colors used throughout the components of this website,
+For Example: background color, text color, component color
+*/
+/*
+This scss file contains variables for screen sizes used in the website ,
+Reference : 
+
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+
+*/
+/***************************************
+@mixin page-layout
+i. center page content
+ii.center page items
+iii.set page background color
+***************************************/
+.navbar-toggle-container {
+  background-color: #b8fff9;
+}
+
+.canvas-container {
+  background-color: #42c2ff;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.avatar-container {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.avatar-image {
+  height: 250px;
+  width: 250px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.avatar-name {
+  font-weight: bold;
+  margin-top: 10%;
+}
+
+.nav-link-content {
+  color: #ffffff;
+  margin-left: 10%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.nav-item-icon {
+  font-weight: bold;
+  font-size: 30px;
+  margin-right: 10%;
+}
+
+.nav-link-icons-only {
+  display: block;
+  text-align: center;
+}
+/*# sourceMappingURL=user-card.css.map */

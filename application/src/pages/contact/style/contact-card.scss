@@ -1,0 +1,35 @@
+@import "../../../style/root";
+
+.contact-card-container {
+  @include page-layout-no-height;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 16px;
+  box-sizing: border-box;
+  border-bottom-right-radius: 16px;
+  background-color: $background-color-dark-primary;
+  margin-bottom: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.contact-card-icon {
+  color: $font-color-light-primary;
+  font-size: 45px;
+}
+
+.contact-card-body {
+  padding-bottom: 10%;
+}
+
+.contact-card-header-content {
+  color: $font-color-light-secondary;
+}
+
+.contact-card-icon-true {
+  color: $true;
+}
+
+.contact-card-icon-false {
+  color: $false;
+}
