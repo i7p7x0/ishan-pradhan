@@ -1,0 +1,15 @@
+@import "../../../style/root";
+
+.carousel-item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.carousel-item-icon {
+  margin-right: 5%;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10%;
+}

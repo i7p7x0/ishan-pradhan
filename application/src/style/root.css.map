@@ -1,8 +1,11 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": ";ACAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC",
     "sources": [
-        "root.scss"
+        "root.scss",
+        "variables/_color-variables.scss",
+        "variables/_screen-size.scss",
+        "mixins/_mixins.scss"
     ],
     "names": [],
     "file": "root.css"

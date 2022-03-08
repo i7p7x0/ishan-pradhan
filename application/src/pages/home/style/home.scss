@@ -1,0 +1,5 @@
+@import "../../../style/root";
+
+.home-container {
+  @include page-layout;
+}
