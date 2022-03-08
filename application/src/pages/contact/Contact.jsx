@@ -15,7 +15,10 @@ const Contact = () => {
       <div className="contact-container-child">
         <h2 className="contact-container-child-header">Contact</h2>
       </div>
-      <ContactCard typeBool={false} contactTypes={myContactTypes} />
+      <div className="contact-container-child">
+        <ContactCard typeBool={false} contactTypes={myContactTypes} />
+        <hr />
+      </div>
     </div>
   );
 };
