@@ -28,6 +28,7 @@ iii.set page background color
   background-color: #42c2ff;
   color: #ffffff;
   font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
 
 .avatar-container {

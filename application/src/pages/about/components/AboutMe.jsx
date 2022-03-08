@@ -7,9 +7,9 @@ import "../style/about-me.css";
 const AboutMe = () => {
   return (
     <div className="about-me-container">
-      <h2>About Me</h2>
+      <h1>About Me</h1>
       <hr />
-      <p>
+      <p className="about-me-paragraph">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eius
         dolorem ipsa consequuntur doloremque, voluptas a consectetur voluptates
         accusantium labore in maxime asperiores pariatur consequatur recusandae

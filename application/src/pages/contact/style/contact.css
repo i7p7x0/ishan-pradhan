@@ -20,7 +20,7 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-.about-container {
+.contact-container {
   background-color: #b8fff9;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,4 +38,4 @@ iii.set page background color
   padding: 0 10%;
   font-family: "Roboto", sans-serif;
 }
-/*# sourceMappingURL=about.css.map */
+/*# sourceMappingURL=contact.css.map */

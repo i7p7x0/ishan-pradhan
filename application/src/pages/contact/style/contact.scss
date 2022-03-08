@@ -1,0 +1,5 @@
+@import "../../../style/root";
+
+.contact-container {
+  @include page-layout-no-height;
+}

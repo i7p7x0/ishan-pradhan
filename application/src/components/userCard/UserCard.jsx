@@ -11,7 +11,7 @@ import {
   AiFillInstagram,
   AiOutlineDownload,
 } from "react-icons/ai";
-import { FaBookReader,FaUserCircle } from "react-icons/fa";
+import { FaBookReader, FaUserCircle } from "react-icons/fa";
 
 //STYLE
 import "./style/user-card.css";
@@ -88,7 +88,7 @@ const UserCard = () => {
               </Link>
               <Link
                 className="nav-link"
-                to="#action2"
+                to="/contact"
                 onClick={handleDrawerState}
               >
                 <span className="nav-link-content">
