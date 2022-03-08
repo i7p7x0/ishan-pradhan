@@ -20,4 +20,10 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-/*# sourceMappingURL=root.css.map */
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #b8fff9;
+}
+/*# sourceMappingURL=app.css.map */

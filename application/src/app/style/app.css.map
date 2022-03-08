@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,gBAAgB,EEEgB,OAAO;CFDxC",
+    "sources": [
+        "app.scss",
+        "../../style/root.scss",
+        "../../style/variables/_color-variables.scss",
+        "../../style/variables/_screen-size.scss",
+        "../../style/mixins/_mixins.scss"
+    ],
+    "names": [],
+    "file": "app.css"
+}

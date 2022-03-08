@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,wBAAwB,CAAC;EACvB,KAAK,EEYU,OAAO;EFXtB,WAAW,EAAE,IAAI;CAClB",
+    "sources": [
+        "about-my-properties.scss",
+        "../../../style/root.scss",
+        "../../../style/variables/_color-variables.scss",
+        "../../../style/variables/_screen-size.scss",
+        "../../../style/mixins/_mixins.scss"
+    ],
+    "names": [],
+    "file": "about-my-properties.css"
+}
