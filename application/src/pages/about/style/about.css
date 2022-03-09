@@ -35,7 +35,7 @@ iii.set page background color
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
-  padding: 0 10%;
+  padding: 5% 10%;
   font-family: "Roboto", sans-serif;
 }
 

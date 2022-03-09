@@ -20,22 +20,7 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-.contact-container {
-  background-color: #b8fff9;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  padding: 5% 10%;
-  font-family: "Roboto", sans-serif;
+.experience-child-container {
+  margin: 10% 0;
 }
-/*# sourceMappingURL=contact.css.map */
+/*# sourceMappingURL=resume-experience.css.map */
