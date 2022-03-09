@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { Offcanvas, Container, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
 // ICONS
 import {
   AiFillHome,
@@ -12,15 +12,82 @@ import {
   AiOutlineDownload,
 } from "react-icons/ai";
 import { FaBookReader, FaUserCircle } from "react-icons/fa";
+import { constPageComponents } from "../../constants/constPageComponents";
+import * as navigationIndicatorActions from "../../stores/navigationIndicator/actions/NavigationIndicator";
 
 //STYLE
 import "./style/user-card.css";
 
 const UserCard = () => {
+  // this dispatch is used to set where the page is currently navigated
+  const dispatch = useDispatch();
+
+  // this variable identifies where the app is currently navigated to
+  const currentNavigation = useSelector((state) => state.navigationIndicator);
+
+  // This state determines whether the drawer is closed or open and sets the state of the drawer
   const [drawerState, setDrawerState] = useState(false);
 
-  const handleDrawerState = () => {
+  /*
+  What happens to the drawer when you click on a navigation item
+  i. the navigationindicator reducer is set to selected drawer item's corresponding page
+  ii. the drawer is closed
+  iii. the application is redirected to selected drawer item's corresponding page 
+*/
+  const handleDrawerState = (event) => {
+    let selectedPage = String(event.target.outerText)
+      .replace(/\s/g, "")
+      .toLowerCase();
+    console.log(selectedPage);
+    let page = constPageComponents.home;
+    switch (selectedPage) {
+      case "aboutme":
+        page = constPageComponents.aboutMe;
+        break;
+      case "resume":
+        page = constPageComponents.resume;
+        break;
+      case "contact":
+        page = constPageComponents.contact;
+        break;
+      default:
+        break;
+    }
+    dispatch(navigationIndicatorActions.setNavigation(page));
     setDrawerState(!drawerState);
+  };
+
+  /*
+  what happens to the drawer when you click on the close icon in the drawer
+  i. the navigationindicator reducer is set to current window url's corresponding page
+  ii. the drawer is closed
+*/
+
+  const handleDrawerClose = () => {
+    let path = String(window.location.pathname).replace("/", "").toLowerCase();
+    let page = constPageComponents.home;
+    switch (path) {
+      case "about":
+        page = constPageComponents.aboutMe;
+        break;
+      case "resume":
+        page = constPageComponents.resume;
+        break;
+      case "contact":
+        page = constPageComponents.contact;
+        break;
+      default:
+        break;
+    }
+    dispatch(navigationIndicatorActions.setNavigation(page));
+    setDrawerState(false);
+  };
+
+  /* what happens to the drawer when you click on the hamburger menu icon
+  i. The drawer is closed
+  */
+  const handleDrawerOpen = () => {
+    setDrawerState(true);
   };
 
   return (
@@ -29,7 +96,7 @@ const UserCard = () => {
         {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
         <Navbar.Toggle
           aria-controls="offcanvasNavbar"
-          onClick={handleDrawerState}
+          onClick={handleDrawerOpen}
           className="navbar-toggle-button"
         />
         <Navbar.Offcanvas
@@ -41,7 +108,7 @@ const UserCard = () => {
           <Offcanvas.Header
             closeButton
             className="canvas-container canvas-container-header"
-            onClick={handleDrawerState}
+            onClick={handleDrawerClose}
           >
             <Offcanvas.Title
               id="offcanvasNavbarLabel"
@@ -61,8 +128,20 @@ const UserCard = () => {
             </div>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Link className="nav-link" to="/home" onClick={handleDrawerState}>
-                <span className="nav-link-content">
-                  <AiFillHome className="nav-item-icon" />
+                <span
+                  className={
+                    currentNavigation.home
+                      ? "nav-link-content-selected"
+                      : "nav-link-content"
+                  }
+                >
+                  <AiFillHome
+                    className={
+                      currentNavigation.home
+                        ? "nav-item-icon-selected"
+                        : "nav-item-icon"
+                    }
+                  />
                   Home
                 </span>
               </Link>
@@ -71,18 +150,42 @@ const UserCard = () => {
                 to="/about"
                 onClick={handleDrawerState}
               >
-                <span className="nav-link-content">
-                  <FaUserCircle className="nav-item-icon" />
+                <span
+                  className={
+                    currentNavigation.aboutMe
+                      ? "nav-link-content-selected"
+                      : "nav-link-content"
+                  }
+                >
+                  <FaUserCircle
+                    className={
+                      currentNavigation.aboutMe
+                        ? "nav-item-icon-selected"
+                        : "nav-item-icon"
+                    }
+                  />
                   About Me
                 </span>
               </Link>
               <Link
                 className="nav-link"
-                to="#action2"
+                to="/resume"
                 onClick={handleDrawerState}
               >
-                <span className="nav-link-content">
-                  <FaBookReader className="nav-item-icon" />
+                <span
+                  className={
+                    currentNavigation.resume
+                      ? "nav-link-content-selected"
+                      : "nav-link-content"
+                  }
+                >
+                  <FaBookReader
+                    className={
+                      currentNavigation.resume
+                        ? "nav-item-icon-selected"
+                        : "nav-item-icon"
+                    }
+                  />
                   Resume
                 </span>
               </Link>
@@ -91,8 +194,20 @@ const UserCard = () => {
                 to="/contact"
                 onClick={handleDrawerState}
               >
-                <span className="nav-link-content">
-                  <AiFillMessage className="nav-item-icon" />
+                <span
+                  className={
+                    currentNavigation.contact
+                      ? "nav-link-content-selected"
+                      : "nav-link-content"
+                  }
+                >
+                  <AiFillMessage
+                    className={
+                      currentNavigation.contact
+                        ? "nav-item-icon-selected"
+                        : "nav-item-icon"
+                    }
+                  />
                   Contact
                 </span>
               </Link>

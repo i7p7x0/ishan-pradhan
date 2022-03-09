@@ -65,13 +65,30 @@ iii.set page background color
   margin-left: 10%;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: large;
+}
+
+.nav-link-content-selected {
+  color: #203239;
+  margin-left: 10%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: x-large;
+  font-weight: bolder;
 }
 
 .nav-item-icon {
   font-weight: bold;
   font-size: 30px;
   margin-right: 10%;
+}
+
+.nav-item-icon-selected {
+  font-weight: bold;
+  font-size: 45px;
+  margin-right: 10%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .nav-link-icons-only {
