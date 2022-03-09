@@ -25,6 +25,8 @@ iii.set page background color
 }
 
 .about-my-can-dos-header {
+  font-weight: bolder;
+  font-size: 18px;
   color: #b8405e;
 }
 /*# sourceMappingURL=about-my-can-dos.css.map */

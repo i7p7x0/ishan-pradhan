@@ -20,24 +20,9 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-.skillset-container {
-  border-top-left-radius: 16px;
-  border: 1px solid #374045;
-  border-bottom-right-radius: 16px;
-  padding: 10%;
-  margin-bottom: 5%;
-}
-
-.skillset-header {
+.skill-header {
   font-weight: bolder;
   font-size: 18px;
   color: #b8405e;
 }
-
-.skillset-header-icon-container {
-  margin-right: 10%;
-  font-size: 24px;
-  font-weight: bolder;
-  color: #b8405e;
-}
-/*# sourceMappingURL=skill-set.css.map */
+/*# sourceMappingURL=resume-top-skill.css.map */

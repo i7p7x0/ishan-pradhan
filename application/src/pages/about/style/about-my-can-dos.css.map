@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,sBAAsB,CAAC;EACrB,YAAY,EAAE,GAAG;CAClB;;AAED,AAAA,wBAAwB,CAAC;EACvB,KAAK,EESU,OAAO;CFRvB",
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,sBAAsB,CAAC;EACrB,YAAY,EAAE,GAAG;CAClB;;AAED,AAAA,wBAAwB,CAAC;EIsBvB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,IAAI;EACf,KAAK,EFdU,OAAO;CFRvB",
     "sources": [
         "about-my-can-dos.scss",
         "../../../style/root.scss",

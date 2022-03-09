@@ -19,7 +19,7 @@ const ResumeExperience = () => {
         {myExperience.map((experience) => {
           return (
             <div className="experience-child-container" key={experience.id}>
-              <span>{experience.title}</span>
+              <span className="title">{experience.title}</span>
               <br />
               <span>
                 {experience.company}, {experience.location}

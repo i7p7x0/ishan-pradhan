@@ -46,7 +46,7 @@ const About = () => {
             <h1>Are you a developer too?</h1>
             <div className="buttons-container">
               <Button
-                variant="success"
+                variant="outline-success"
                 className="button"
                 id="developerY"
                 onClick={handleIsDeveloperButtonPress}
@@ -55,7 +55,7 @@ const About = () => {
               </Button>
 
               <Button
-                variant="danger"
+                variant="outline-danger"
                 className="button"
                 id="developerN"
                 onClick={handleIsDeveloperButtonPress}

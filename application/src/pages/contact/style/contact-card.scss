@@ -7,14 +7,14 @@
   border-top-left-radius: 16px;
   box-sizing: border-box;
   border-bottom-right-radius: 16px;
-  background-color: $background-color-dark-primary;
+  border: 1px solid $font-color-dark-secondary;
   margin-bottom: 5%;
   padding-top: 5%;
   padding-bottom: 5%;
 }
 
 .contact-card-icon {
-  color: $font-color-light-primary;
+  color: $font-color-dark-primary;
   font-size: 45px;
 }
 
@@ -23,7 +23,8 @@
 }
 
 .contact-card-header-content {
-  color: $font-color-light-secondary;
+  color: $font-color-red;
+  font-weight: bolder;
 }
 
 .contact-card-icon-true {

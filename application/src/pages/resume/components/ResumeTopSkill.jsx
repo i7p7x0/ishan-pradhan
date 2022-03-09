@@ -1,6 +1,10 @@
 import { React } from "react";
 import myTopSkills from "../../../data/myTopSkills";
 
+// STYLE
+
+import "../style/resume-top-skill.css";
+
 const ResumeKeySkill = () => {
   return (
     <div className="resume-key-skills-container">

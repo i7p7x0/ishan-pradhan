@@ -12,6 +12,9 @@ import "./style/resume.css";
 const Resume = () => {
   return (
     <div className="resume-container">
+      <div className="resume-child resume-header-container">
+        <h2 className="resume-header">Resume</h2><hr/>
+      </div>
       <div className="resume-container-child">
         <ResumeEducation />
       </div>

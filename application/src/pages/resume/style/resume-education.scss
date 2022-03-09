@@ -1,10 +1,5 @@
 @import "../../../style/root";
 
 .degree {
-  font-weight: bolder;
-  font-size: 18px;
-}
-
-.university {
-  font-size: 16px;
+  @include seconary-header-bold;
 }

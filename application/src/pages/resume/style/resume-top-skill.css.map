@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,eAAe,CAAC;EIKd,gBAAgB,EFDe,OAAO;EEEtC,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,MAAM,EAAE,IAAI;EACZ,WAAW,ECbS,QAAQ,EAAE,UAAU;CLIzC",
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,aAAa,CAAC;EI0BZ,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,IAAI;EACf,KAAK,EFdU,OAAO;CFZvB",
     "sources": [
-        "home.scss",
+        "resume-top-skill.scss",
         "../../../style/root.scss",
         "../../../style/variables/_color-variables.scss",
         "../../../style/variables/_screen-size.scss",
@@ -10,5 +10,5 @@
         "../../../style/variables/_font-variables.scss"
     ],
     "names": [],
-    "file": "home.css"
+    "file": "resume-top-skill.css"
 }
