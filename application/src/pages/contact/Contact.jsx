@@ -3,6 +3,7 @@ import { React } from "react";
 // CUSTOM COMPONENTS
 import ContactCard from "./components/ContactCard";
 import { constContactType } from "../../constants/constContactType";
+import ContactForm from "./components/ContactForm";
 // DATA
 import myContactTypes from "../../data/myContactTypes";
 
@@ -18,6 +19,9 @@ const Contact = () => {
       <div className="contact-container-child">
         <ContactCard typeBool={false} contactTypes={myContactTypes} />
         <hr />
+      </div>
+      <div className="contact-container-child">
+        <ContactForm />
       </div>
     </div>
   );
