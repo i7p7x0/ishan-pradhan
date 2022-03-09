@@ -38,7 +38,7 @@ const UserCard = () => {
     let selectedPage = String(event.target.outerText)
       .replace(/\s/g, "")
       .toLowerCase();
-    console.log(selectedPage);
+
     let page = constPageComponents.home;
     switch (selectedPage) {
       case "aboutme":
@@ -58,12 +58,12 @@ const UserCard = () => {
   };
 
   /*
-  what happens to the drawer when you click on the close icon in the drawer
+  what happens to the drawer when you click on the close icon in the drawer and hamburger drawer icon
   i. the navigationindicator reducer is set to current window url's corresponding page
   ii. the drawer is closed
 */
 
-  const handleDrawerClose = () => {
+  const handleDrawer = () => {
     let path = String(window.location.pathname).replace("/", "").toLowerCase();
     let page = constPageComponents.home;
     switch (path) {
@@ -80,14 +80,7 @@ const UserCard = () => {
         break;
     }
     dispatch(navigationIndicatorActions.setNavigation(page));
-    setDrawerState(false);
-  };
-
-  /* what happens to the drawer when you click on the hamburger menu icon
-  i. The drawer is closed
-  */
-  const handleDrawerOpen = () => {
-    setDrawerState(true);
+    setDrawerState(!drawerState);
   };
 
   return (
@@ -96,7 +89,7 @@ const UserCard = () => {
         {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
         <Navbar.Toggle
           aria-controls="offcanvasNavbar"
-          onClick={handleDrawerOpen}
+          onClick={handleDrawer}
           className="navbar-toggle-button"
         />
         <Navbar.Offcanvas
@@ -108,7 +101,7 @@ const UserCard = () => {
           <Offcanvas.Header
             closeButton
             className="canvas-container canvas-container-header"
-            onClick={handleDrawerClose}
+            onClick={handleDrawer}
           >
             <Offcanvas.Title
               id="offcanvasNavbarLabel"

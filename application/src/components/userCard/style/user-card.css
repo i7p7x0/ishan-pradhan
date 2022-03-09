@@ -87,8 +87,8 @@ iii.set page background color
   font-weight: bold;
   font-size: 45px;
   margin-right: 10%;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
 }
 
 .nav-link-icons-only {
