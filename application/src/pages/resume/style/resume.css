@@ -42,8 +42,40 @@ iii.set page background color
 
 @media screen and (min-width: 1024px) {
   .resume-container {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "resume-header resume-header" "resume-education resume-education" "resume-experience resume-top-skill";
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
     height: 100vh;
     overflow: scroll;
+  }
+  .resume-header-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: resume-header;
+  }
+  .resume-education {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: resume-education;
+  }
+  .resume-experience {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: resume-experience;
+    margin-right: 10%;
+  }
+  .resume-top-skill {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: resume-top-skill;
   }
 }
 /*# sourceMappingURL=resume.css.map */

@@ -1,7 +1,7 @@
 import { React } from "react";
 import { AiFillHome, AiFillMessage, AiOutlineDownload } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { FaBookReader } from "react-icons/fa";
+import { FaBookReader,FaUserCircle } from "react-icons/fa";
 // CUSTOM COMPONENTS
 import UserCard from "../../components/userCard/UserCard";
 
@@ -26,7 +26,7 @@ const Header = () => {
         <Link to="/about" className="header-pc-link">
           <div className="header-pc-button">
             <div className="header-pc-icon">
-              <AiFillHome />
+              <FaUserCircle />
             </div>
 
             <div className="header-pc-text">About Me</div>

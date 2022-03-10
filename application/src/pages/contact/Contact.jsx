@@ -13,14 +13,14 @@ import "./style/contact.css";
 const Contact = () => {
   return (
     <div className="contact-container">
-      <div className="contact-container-child">
+      <div className="contact-container-child contact-container-child-heading">
         <h2 className="contact-container-child-header">Contact</h2>
-      </div>
-      <div className="contact-container-child">
-        <ContactCard typeBool={false} contactTypes={myContactTypes} />
         <hr />
       </div>
-      <div className="contact-container-child">
+      <div className="contact-container-child contact-container-child-card">
+        <ContactCard typeBool={false} contactTypes={myContactTypes} />
+      </div>
+      <div className="contact-container-child contact-container-child-form">
         <ContactForm />
       </div>
     </div>

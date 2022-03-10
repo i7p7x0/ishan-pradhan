@@ -42,8 +42,25 @@ iii.set page background color
 
 @media screen and (min-width: 1024px) {
   .contact-container {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "heading heading" "card form";
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
     height: 100vh;
     overflow: scroll;
+  }
+  .contact-container-child-heading {
+    grid-row: heading;
+  }
+  .contact-container-child-card {
+    grid-row: card;
+  }
+  .contact-container-child-form {
+    grid-row: form;
   }
 }
 /*# sourceMappingURL=contact.css.map */

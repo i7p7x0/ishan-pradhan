@@ -6,7 +6,22 @@
 
 @media screen and (min-width: $min-width-laptop) {
   .contact-container {
+    display: grid;
+    grid-template-areas:
+      "heading heading"
+      "card form";
+    justify-content: space-around;
+    align-items: left;
     height: 100vh;
     overflow: scroll;
+  }
+  .contact-container-child-heading {
+    grid-row: heading;
+  }
+  .contact-container-child-card {
+    grid-row: card;
+  }
+  .contact-container-child-form {
+    grid-row: form;
   }
 }
