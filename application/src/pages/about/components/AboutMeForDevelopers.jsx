@@ -6,6 +6,10 @@ import SkillSet from "../../../components/skillsetCard/SkillSet";
 // DATA
 import mySkillset from "../../../data/mySkillset";
 
+// STYLE
+
+import "../style/about-me-for-developers.css";
+
 const AboutMeForDevelopers = () => {
   return (
     <div className="about-me-for-developers-container">

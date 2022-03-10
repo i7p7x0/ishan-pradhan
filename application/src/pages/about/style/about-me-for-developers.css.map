@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EACjC,AAAA,2CAA2C,CAAC;IAC1C,OAAO,EAAE,IAAI;IACb,qBAAqB,EAAE,cAAc;IACrC,kBAAkB,EAAE,IAAI;GACzB;;;AAGH,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAClC,AAAA,2CAA2C,CAAC;IAC1C,OAAO,EAAE,IAAI;IACb,qBAAqB,EAAE,cAAc;IACrC,kBAAkB,EAAE,IAAI;GACzB",
+    "sources": [
+        "about-me-for-developers.scss",
+        "../../../style/root.scss",
+        "../../../style/variables/_color-variables.scss",
+        "../../../style/variables/_screen-size.scss",
+        "../../../style/mixins/_mixins.scss",
+        "../../../style/variables/_font-variables.scss"
+    ],
+    "names": [],
+    "file": "about-me-for-developers.css"
+}

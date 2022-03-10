@@ -1,1 +1,18 @@
 @import "../../../style/root";
+
+.header-pc-container {
+  background-color: red;
+  height: 100vw;
+}
+
+@media screen and (min-width: $min-width-laptop) {
+  .header-mobile-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $min-width-laptop) {
+  .header-pc-container {
+    display: none;
+  }
+}

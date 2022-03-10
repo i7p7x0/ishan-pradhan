@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,sBAAsB,CAAC;EACrB,YAAY,EAAE,GAAG;CAClB;;AAED,AAAA,wBAAwB,CAAC;EIuBvB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,IAAI;EACf,KAAK,EFfU,OAAO;CFRvB",
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,2BAA2B,CAAC;EAC1B,gBAAgB,EAAE,MAAM;EACxB,MAAM,EAAE,KAAK;CACd;;AAED,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAClC,AAAA,2BAA2B,CAAC;IAC1B,OAAO,EAAE,IAAI;GACd",
     "sources": [
-        "about-my-can-dos.scss",
+        "user-card-static.scss",
         "../../../style/root.scss",
         "../../../style/variables/_color-variables.scss",
         "../../../style/variables/_screen-size.scss",
@@ -10,5 +10,5 @@
         "../../../style/variables/_font-variables.scss"
     ],
     "names": [],
-    "file": "about-my-can-dos.css"
+    "file": "user-card-static.css"
 }

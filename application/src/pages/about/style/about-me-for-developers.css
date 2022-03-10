@@ -20,24 +20,25 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
+@media screen and (min-width: 768px) {
+  .about-me-for-developers-skillset-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (2fr)[2];
+        grid-template-columns: repeat(2, 2fr);
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .app-container {
+  .about-me-for-developers-skillset-container {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 3fr 10fr;
-        grid-template-columns: 1fr 3fr 10fr;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-  }
-  .app-container {
-    position: relative;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
   }
 }
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=about-me-for-developers.css.map */

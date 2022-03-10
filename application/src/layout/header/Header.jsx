@@ -6,7 +6,14 @@ import UserCard from "../../components/userCard/UserCard";
 import "./style/header.css";
 
 const Header = () => {
-  return <UserCard />;
+  return (
+    <div classNanme="header-container">
+      <div className="header-mobile-container">
+        <UserCard />
+      </div>
+      <div className="header-pc-container">test</div>
+    </div>
+  );
 };
 
 export default Header;

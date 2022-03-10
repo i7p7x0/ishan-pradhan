@@ -20,4 +20,20 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
+.header-pc-container {
+  background-color: red;
+  height: 100vw;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-mobile-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header-pc-container {
+    display: none;
+  }
+}
 /*# sourceMappingURL=header.css.map */

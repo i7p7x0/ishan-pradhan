@@ -1,0 +1,12 @@
+@import "../../../style/root";
+
+.user-card-static-container {
+  background-color: yellow;
+  height: 100vw;
+}
+
+@media screen and (max-width: $min-width-laptop) {
+  .user-card-static-container {
+    display: none;
+  }
+}

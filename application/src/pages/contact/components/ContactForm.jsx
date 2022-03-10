@@ -280,7 +280,7 @@ const ContactForm = () => {
                 })
               : null}
           </Form.Group>
-          <Button variant="secondary" type="submit" onClick={handleFormSubmit}>
+          <Button variant="outline-success" type="submit" onClick={handleFormSubmit}>
             Send
           </Button>
         </Form>

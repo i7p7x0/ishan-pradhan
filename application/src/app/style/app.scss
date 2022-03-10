@@ -6,3 +6,15 @@ html {
   padding: 0;
   background-color: $background-color-light-primary;
 }
+
+@media screen and(min-width:$min-width-laptop) {
+  .app-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 10fr;
+    grid-template-rows: 1fr;
+  }
+
+  .app-container {
+    position: relative;
+  }
+}
