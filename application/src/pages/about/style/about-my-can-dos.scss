@@ -5,5 +5,5 @@
 }
 
 .about-my-can-dos-header {
-  color: $font-color-red;
+  @include seconary-header-bold;
 }

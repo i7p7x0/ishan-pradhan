@@ -1,0 +1,5 @@
+@import "../../../style/root";
+
+.title {
+  @include seconary-header-bold;
+}

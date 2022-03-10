@@ -21,23 +21,24 @@ ii.center page items
 iii.set page background color
 ***************************************/
 .skillset-container {
-  background-color: #313552;
-  border: 1px solid black;
   border-top-left-radius: 16px;
+  border: 1px solid #374045;
   border-bottom-right-radius: 16px;
-  color: #ffffff;
   padding: 10%;
   margin-bottom: 5%;
+  margin-right: 5%;
 }
 
 .skillset-header {
   font-weight: bolder;
-  font-size: larger;
+  font-size: 18px;
+  color: #b8405e;
 }
 
 .skillset-header-icon-container {
   margin-right: 10%;
   font-size: 24px;
   font-weight: bolder;
+  color: #b8405e;
 }
 /*# sourceMappingURL=skill-set.css.map */

@@ -21,7 +21,7 @@ ii.center page items
 iii.set page background color
 ***************************************/
 .contact-container {
-  background-color: #b8fff9;
+  background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +35,15 @@ iii.set page background color
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
-  padding: 0 10%;
+  padding: 5% 10%;
+  padding-top: 0;
   font-family: "Roboto", sans-serif;
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-container {
+    height: 100vh;
+    overflow: scroll;
+  }
 }
 /*# sourceMappingURL=contact.css.map */

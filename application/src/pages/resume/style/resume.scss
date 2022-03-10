@@ -1,0 +1,12 @@
+@import "../../../style/root";
+
+.resume-container {
+  @include page-layout-no-height;
+}
+
+@media screen and (min-width: $min-width-laptop) {
+  .resume-container {
+    height: 100vh;
+    overflow: scroll;
+  }
+}

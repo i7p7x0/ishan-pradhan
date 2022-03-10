@@ -21,11 +21,11 @@ ii.center page items
 iii.set page background color
 ***************************************/
 .navbar-toggle-container {
-  background-color: #b8fff9;
+  background-color: #ffffff;
 }
 
 .canvas-container {
-  background-color: #42c2ff;
+  background-color: #495371;
   color: #ffffff;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
@@ -65,13 +65,30 @@ iii.set page background color
   margin-left: 10%;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: large;
+}
+
+.nav-link-content-selected {
+  color: #08d9d6;
+  margin-left: 10%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: x-large;
+  font-weight: bolder;
 }
 
 .nav-item-icon {
   font-weight: bold;
   font-size: 30px;
   margin-right: 10%;
+}
+
+.nav-item-icon-selected {
+  font-weight: bold;
+  font-size: 45px;
+  margin-right: 10%;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
 }
 
 .nav-link-icons-only {
