@@ -1,0 +1,17 @@
+@import "../../../style/root";
+
+@media screen and(min-width:$min-width-tablet) {
+  .about-me-for-developers-skillset-container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media screen and(min-width:$min-width-laptop) {
+  .about-me-for-developers-skillset-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}

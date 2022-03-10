@@ -1,0 +1,38 @@
+@import "../../../style/root";
+
+.user-card-static-container {
+  background-color: $background-color-dark-primary;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-card-static-title-container {
+  margin-top: 10%;
+  color: $font-color-light-primary;
+}
+
+.user-card-static-title-name {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.user-card-static-title-title {
+  font-size: 18px;
+}
+
+.user-card-static-icons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 28px;
+  margin-top: 5%;
+}
+
+@media screen and (max-width: $min-width-laptop) {
+  .user-card-static-container {
+    display: none;
+  }
+}

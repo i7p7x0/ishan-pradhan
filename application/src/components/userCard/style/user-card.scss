@@ -1,7 +1,7 @@
 @import "../../../style/root";
 
 .navbar-toggle-container {
-  background-color: $background-color-light-tertiary;
+  background-color: $background-color-light-primary;
 }
 
 .canvas-container {
@@ -40,7 +40,7 @@
 }
 
 .nav-link-content-selected {
-  color: $font-color-dark-primary;
+  color: $font-color-blue;
   margin-left: 10%;
   margin-top: 0;
   margin-bottom: 0;

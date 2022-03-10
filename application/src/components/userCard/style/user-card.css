@@ -21,11 +21,11 @@ ii.center page items
 iii.set page background color
 ***************************************/
 .navbar-toggle-container {
-  background-color: #b8fff9;
+  background-color: #ffffff;
 }
 
 .canvas-container {
-  background-color: #42c2ff;
+  background-color: #495371;
   color: #ffffff;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
@@ -69,7 +69,7 @@ iii.set page background color
 }
 
 .nav-link-content-selected {
-  color: #203239;
+  color: #08d9d6;
   margin-left: 10%;
   margin-top: 0;
   margin-bottom: 0;

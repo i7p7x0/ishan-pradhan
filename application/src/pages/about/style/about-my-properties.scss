@@ -1,6 +1,5 @@
 @import "../../../style/root";
 
 .about-my-properties-key {
-  color: $font-color-red;
-  font-weight: bold;
+  @include seconary-header-bold;
 }

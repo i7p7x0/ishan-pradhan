@@ -1,1 +1,36 @@
 @import "../../../style/root";
+
+.header-pc-container {
+  background-color: $background-color-dark-secondary;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.header-pc-link {
+  text-decoration: none;
+}
+
+.header-pc-button {
+  color: $font-color-blue;
+}
+
+.header-pc-icon {
+  font-weight: bolder;
+  font-size: 32px;
+}
+
+@media screen and (min-width: $min-width-laptop) {
+  .header-mobile-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $min-width-laptop) {
+  .header-pc-container {
+    display: none;
+  }
+}

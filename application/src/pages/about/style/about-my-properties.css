@@ -21,7 +21,8 @@ ii.center page items
 iii.set page background color
 ***************************************/
 .about-my-properties-key {
+  font-weight: bolder;
+  font-size: 18px;
   color: #b8405e;
-  font-weight: bold;
 }
 /*# sourceMappingURL=about-my-properties.css.map */

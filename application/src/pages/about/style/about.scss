@@ -13,3 +13,35 @@
 .button {
   width: 40%;
 }
+
+@media screen and(min-width:$min-width-laptop) {
+  .about-container {
+    display: grid;
+    grid-template-areas:
+      "aboutme aboutme aboutmyproperties"
+      "aboutmycandos aboutmycandos aboutmycandos"
+      "aboutmefordevelopers aboutmefordevelopers aboutmefordevelopers";
+    height: 100vh;
+    overflow: scroll;
+  }
+  .about-child-about-me-container {
+    grid-area: aboutme;
+  }
+  .about-child-about-my-properties-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    grid-area: aboutmyproperties;
+  }
+  .about-child-about-my-can-dos-container {
+    grid-area: aboutmycandos;
+  }
+  .about-child-about-me-for-developers-container {
+    grid-area: aboutmefordevelopers;
+  }
+  .about-my-can-do-body-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

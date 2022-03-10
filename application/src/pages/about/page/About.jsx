@@ -31,22 +31,31 @@ const About = () => {
 
   return (
     <div className="about-container">
-      <AboutMe />
-      <hr />
-      <AboutMyProperties properties={MY_PROPERTIES} />
-      <hr />
-      <div className="what-i-do-container">
-        <h1>What I Do</h1>
-        <AboutMyCanDos dos={MY_CAN_DOS} />
+      {/* about me */}
+      <div className="about-container-child about-child-about-me-container">
+        <AboutMe />
         <hr />
       </div>
-      <div className="about-me-for-developers-parent-container">
+      {/* about my properties */}
+      <div className="about-container-child about-child-about-my-properties-container">
+        <AboutMyProperties properties={MY_PROPERTIES} />
+        <hr />
+      </div>
+      {/* about my can dos */}
+      <div className="about-container-child about-child-about-my-can-dos-container">
+        <h1>What I Do</h1>
+        <div className="about-my-can-do-body-container">
+          <AboutMyCanDos dos={MY_CAN_DOS} />
+        </div>
+        <hr />
+      </div>
+      <div className="about-container-child about-child-about-me-for-developers-container">
         {isDeveloper === "-1" ? (
           <div className="about-me-for-developers-choice-container">
             <h1>Are you a developer too?</h1>
             <div className="buttons-container">
               <Button
-                variant="success"
+                variant="outline-success"
                 className="button"
                 id="developerY"
                 onClick={handleIsDeveloperButtonPress}
@@ -55,7 +64,7 @@ const About = () => {
               </Button>
 
               <Button
-                variant="danger"
+                variant="outline-danger"
                 className="button"
                 id="developerN"
                 onClick={handleIsDeveloperButtonPress}
@@ -65,7 +74,9 @@ const About = () => {
             </div>
           </div>
         ) : isDeveloper === "0" ? null : isDeveloper === "1" ? (
-          <AboutMeForDevelopers />
+          <div className="about-me-for-developers-wrapper">
+            <AboutMeForDevelopers />
+          </div>
         ) : null}
       </div>
     </div>

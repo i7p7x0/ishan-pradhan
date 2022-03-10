@@ -1,22 +1,21 @@
 @import "../../../style/root";
 
 .skillset-container {
-  background-color: $background-color-dark-secondary;
-  border: 1px solid black;
   border-top-left-radius: 16px;
+  border: 1px solid $font-color-dark-secondary;
   border-bottom-right-radius: 16px;
-  color: $font-color-light-primary;
   padding: 10%;
   margin-bottom: 5%;
+  margin-right: 5%;
 }
 
 .skillset-header {
-  font-weight: bolder;
-  font-size: larger;
+  @include seconary-header-bold;
 }
 
 .skillset-header-icon-container {
   margin-right: 10%;
   font-size: 24px;
   font-weight: bolder;
+  color: $font-color-red;
 }

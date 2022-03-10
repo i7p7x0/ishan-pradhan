@@ -21,7 +21,7 @@ ii.center page items
 iii.set page background color
 ***************************************/
 .contact-card-container {
-  background-color: #b8fff9;
+  background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +35,8 @@ iii.set page background color
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
-  padding: 0 10%;
+  padding: 5% 10%;
+  padding-top: 0;
   font-family: "Roboto", sans-serif;
   justify-content: center;
   -webkit-box-align: center;
@@ -45,14 +46,14 @@ iii.set page background color
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-bottom-right-radius: 16px;
-  background-color: #212121;
+  border: 1px solid #374045;
   margin-bottom: 5%;
   padding-top: 5%;
   padding-bottom: 5%;
 }
 
 .contact-card-icon {
-  color: #ffffff;
+  color: #203239;
   font-size: 45px;
 }
 
@@ -61,7 +62,8 @@ iii.set page background color
 }
 
 .contact-card-header-content {
-  color: #42c2ff;
+  color: #b8405e;
+  font-weight: bolder;
 }
 
 .contact-card-icon-true {
