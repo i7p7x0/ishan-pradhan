@@ -11,7 +11,7 @@ import {
   AiFillInstagram,
   AiOutlineDownload,
 } from "react-icons/ai";
-import { FaBookReader, FaUserCircle } from "react-icons/fa";
+import { FaBookReader, FaUserCircle, FaDiscord } from "react-icons/fa";
 import { constPageComponents } from "../../constants/constPageComponents";
 import * as navigationIndicatorActions from "../../stores/navigationIndicator/actions/NavigationIndicator";
 
@@ -213,6 +213,7 @@ const UserCard = () => {
                   <AiFillLinkedin className="nav-item-icon" />
                   <AiFillGithub className="nav-item-icon" />
                   <AiFillInstagram className="nav-item-icon" />
+                  <FaDiscord className="nav-item-icon" />
                 </span>
               </Link>
               <Link

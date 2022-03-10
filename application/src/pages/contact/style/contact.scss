@@ -3,3 +3,10 @@
 .contact-container {
   @include page-layout-no-height;
 }
+
+@media screen and (min-width: $min-width-laptop) {
+  .contact-container {
+    height: 100vh;
+    overflow: scroll;
+  }
+}

@@ -61,6 +61,8 @@ iii.set page background color
     display: -ms-grid;
     display: grid;
         grid-template-areas: "aboutme aboutme aboutmyproperties" "aboutmycandos aboutmycandos aboutmycandos" "aboutmefordevelopers aboutmefordevelopers aboutmefordevelopers";
+    height: 100vh;
+    overflow: scroll;
   }
   .about-child-about-me-container {
     -ms-grid-row: 1;

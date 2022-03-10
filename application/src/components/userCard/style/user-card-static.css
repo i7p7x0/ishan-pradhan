@@ -21,8 +21,48 @@ ii.center page items
 iii.set page background color
 ***************************************/
 .user-card-static-container {
-  background-color: yellow;
-  height: 100vw;
+  background-color: #212121;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-card-static-title-container {
+  margin-top: 10%;
+  color: #ffffff;
+}
+
+.user-card-static-title-name {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.user-card-static-title-title {
+  font-size: 18px;
+}
+
+.user-card-static-icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 28px;
+  margin-top: 5%;
 }
 
 @media screen and (max-width: 1024px) {

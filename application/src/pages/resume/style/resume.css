@@ -39,4 +39,11 @@ iii.set page background color
   padding-top: 0;
   font-family: "Roboto", sans-serif;
 }
+
+@media screen and (min-width: 1024px) {
+  .resume-container {
+    height: 100vh;
+    overflow: scroll;
+  }
+}
 /*# sourceMappingURL=resume.css.map */

@@ -17,4 +17,9 @@ html {
   .app-container {
     position: relative;
   }
+
+  html {
+    overflow: hidden;
+    height: 100%;
+  }
 }

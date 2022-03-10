@@ -21,8 +21,34 @@ ii.center page items
 iii.set page background color
 ***************************************/
 .header-pc-container {
-  background-color: red;
-  height: 100vw;
+  background-color: #313552;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.header-pc-link {
+  text-decoration: none;
+}
+
+.header-pc-button {
+  color: #08d9d6;
+}
+
+.header-pc-icon {
+  font-weight: bolder;
+  font-size: 32px;
 }
 
 @media screen and (min-width: 1024px) {

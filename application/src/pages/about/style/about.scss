@@ -21,6 +21,8 @@
       "aboutme aboutme aboutmyproperties"
       "aboutmycandos aboutmycandos aboutmycandos"
       "aboutmefordevelopers aboutmefordevelopers aboutmefordevelopers";
+    height: 100vh;
+    overflow: scroll;
   }
   .about-child-about-me-container {
     grid-area: aboutme;
