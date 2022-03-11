@@ -53,6 +53,7 @@ iii.set page background color
             align-items: left;
     height: 100vh;
     overflow: scroll;
+    padding-top: 2%;
   }
   .resume-header-container {
     -ms-grid-row: 1;

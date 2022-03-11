@@ -4,16 +4,26 @@
   @include page-layout-no-height;
 }
 
+@media screen and (min-width: $min-width-tablet) {
+  .contact-container-child-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+  }
+}
+
 @media screen and (min-width: $min-width-laptop) {
   .contact-container {
     display: grid;
     grid-template-areas:
-      "heading heading"
-      "card form";
-    justify-content: space-around;
-    align-items: left;
+      "heading"
+      "card" "form";
+    justify-content: stretch;
+    align-items: center;
     height: 100vh;
     overflow: scroll;
+    padding-top: 2%;
   }
   .contact-container-child-heading {
     grid-row: heading;
@@ -23,5 +33,12 @@
   }
   .contact-container-child-form {
     grid-row: form;
+  }
+
+  .contact-container-child-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
   }
 }

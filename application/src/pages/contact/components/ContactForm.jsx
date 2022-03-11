@@ -185,7 +185,7 @@ const ContactForm = () => {
   return (
     <div className="contact-form-container">
       <div className="contact-form-header-container">
-        <h2 className="contact-form-header">How can I help?</h2>
+        <h2 className="contact-form-header">How can I help you?</h2>
       </div>
       <div className="contact-form-body-container">
         <Form>

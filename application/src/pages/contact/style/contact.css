@@ -40,18 +40,34 @@ iii.set page background color
   font-family: "Roboto", sans-serif;
 }
 
+@media screen and (min-width: 768px) {
+  .contact-container-child-card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[3];
+        grid-template-rows: repeat(3, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .contact-container {
     display: -ms-grid;
     display: grid;
-        grid-template-areas: "heading heading" "card form";
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: left;
-        -ms-flex-align: left;
-            align-items: left;
+        grid-template-areas: "heading" "card" "form";
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100vh;
     overflow: scroll;
+    padding-top: 2%;
   }
   .contact-container-child-heading {
     grid-row: heading;
@@ -61,6 +77,17 @@ iii.set page background color
   }
   .contact-container-child-form {
     grid-row: form;
+  }
+  .contact-container-child-card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=contact.css.map */

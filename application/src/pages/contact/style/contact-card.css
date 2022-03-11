@@ -73,4 +73,21 @@ iii.set page background color
 .contact-card-icon-false {
   color: #ff0075;
 }
+
+@media screen and (min-width: 768px) {
+  .contact-card-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-right: 5%;
+    white-space: nowrap;
+  }
+}
 /*# sourceMappingURL=contact-card.css.map */

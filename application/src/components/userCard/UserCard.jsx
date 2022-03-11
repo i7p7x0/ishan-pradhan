@@ -115,7 +115,7 @@ const UserCard = () => {
               <div className="avatar-image"></div>
               <div className="avatar-title">
                 <h1 className="avatar-name">Ishan Pradhan</h1>
-                <h2 className="avatar-designation">full stack web developer</h2>
+                <h2 className="avatar-designation">full stack developer</h2>
                 <hr />
               </div>
             </div>
