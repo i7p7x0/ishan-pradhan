@@ -11,6 +11,7 @@ import Header from "../layout/header/Header";
 import About from "../pages/about/page/About";
 import Contact from "../pages/contact/Contact";
 import Resume from "../pages/resume/Resume";
+import Admin from "../pages/admin/pages/Admin";
 import UserCardStatic from "../components/userCard/UserCardStatic";
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
               <Route path="/about" exact element={<About />} />
               <Route path="/resume" exact element={<Resume />} />
               <Route path="/contact" exact element={<Contact />} />
+              <Route path="/admin" exact element={<Admin />} />
             </Routes>
           </div>
         </div>

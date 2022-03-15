@@ -10,7 +10,7 @@ import "./style/header.css";
 
 const Header = () => {
   return (
-    <div classNanme="header-container">
+    <div className="header-container">
       <div className="header-mobile-container">
         <UserCard />
       </div>

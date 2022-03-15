@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,aAAa,CAAC;EACZ,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,GAAG,CAAC,KAAK,CEEc,OAAO;EFDtC,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,GAAG;CACb;;AAED,AAAA,kBAAkB,CAAC;EACjB,eAAe,EAAE,IAAI;EACrB,KAAK,EEL0B,OAAO;CFMvC",
+    "sources": [
+        "admin-button.scss",
+        "../../../style/root.scss",
+        "../../../style/variables/_color-variables.scss",
+        "../../../style/variables/_screen-size.scss",
+        "../../../style/mixins/_mixins.scss",
+        "../../../style/variables/_font-variables.scss"
+    ],
+    "names": [],
+    "file": "admin-button.css"
+}

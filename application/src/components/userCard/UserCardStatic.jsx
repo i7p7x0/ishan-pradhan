@@ -7,6 +7,8 @@ import {
   AiFillSkype,
 } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
+// CUSTOM COMPONENTS
+import AdminButton from "../buttons/AdminButton";
 // STYLE
 
 import "./style/user-card-static.css";
@@ -42,6 +44,9 @@ const UserCardStatic = () => {
               <span className="user-card-static-title-title">
                 live:.cid.344ea10c532e81d8
               </span>
+            </div>
+            <div className="user-card-static-icons-container">
+              <AdminButton />
             </div>
           </div>
         </div>
