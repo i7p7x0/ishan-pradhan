@@ -8,7 +8,7 @@ import { FaFolderOpen, FaCheckCircle } from "react-icons/fa";
 import "../style/admin-mode.css";
 
 const AdminMode = () => {
-  //
+  //this state increases by 1 everytime a message is deleted and re-executes the useEffect hook to fetch new list of messages
   const [fetchCycle, setFetchCycle] = useState(1);
 
   // this state determines wheter to display a message or display entire messages table
