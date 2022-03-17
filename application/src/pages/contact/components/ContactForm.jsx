@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
 // CUSTOM COMPONENTS
+import postMessage from "../../../requests/post/postMessage";
 import * as formValidations from "../../../scripts/validations/ValidateUserInput";
 
 import "../style/contact-form.css";
@@ -178,16 +179,22 @@ const ContactForm = () => {
       formValidations.validateSubject(userInput.subject).isValidated &&
       formValidations.validateMessage(userInput.message).isValidated
     ) {
-      await fetch("http://localhost:5000/contact/", {
-        method: "POST",
-        headers: { "Content-Type": "Application/Json" },
-        body: JSON.stringify({
-          name: userInput.fullName,
-          emailAddress: userInput.emailAddress,
-          subject: userInput.subject,
-          message: userInput.message,
-        }),
-      });
+      postMessage(
+        userInput.fullName,
+        userInput.emailAddress,
+        userInput.subject,
+        userInput.message
+      );
+      // await fetch("http://localhost:5000/contact/", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "Application/Json" },
+      //   body: JSON.stringify({
+      //     name: userInput.fullName,
+      //     emailAddress: userInput.emailAddress,
+      //     subject: userInput.subject,
+      //     message: userInput.message,
+      //   }),
+      // });
     }
   };
 

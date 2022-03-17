@@ -1,14 +1,14 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import MessageDetails from "./MessageDetails";
 import { FaFolderOpen, FaCheckCircle } from "react-icons/fa";
 // DATA
-import messages from "../../../data/TEMP_MESSAGES";
 
 // STYLE
 import "../style/admin-mode.css";
 
 const AdminMode = () => {
+  // this state determines wheter to display a message or display entire messages table
   const [detail, setDetail] = useState({
     show: false,
     id: "",
@@ -17,6 +17,25 @@ const AdminMode = () => {
     subject: "",
     message: "",
   });
+
+  const [messageList, setMessageList] = useState({
+    messages: "",
+    loaded: false,
+  });
+
+  // get list of messages from server
+  useEffect(() => {
+    let mounted = true;
+    const sendRequest = async () => {
+      const response = await fetch("http://localhost:5000/contact/");
+      const responseData = await response.json();
+      if (mounted) {
+        setMessageList({ messages: responseData, loaded: true });
+      }
+    };
+    sendRequest();
+    return () => (mounted = false);
+  }, []);
 
   const handleViewDetailsClick = (id, name, emailAddress, subject, message) => {
     setDetail({
@@ -29,7 +48,7 @@ const AdminMode = () => {
     });
   };
 
-  return (
+  return messageList.loaded ? (
     <div className="admin-mode-container">
       {!detail.show ? <h1>Messages</h1> : null}
       {!detail.show ? (
@@ -46,9 +65,9 @@ const AdminMode = () => {
               </tr>
             </thead>
             <tbody>
-              {messages.map((message) => {
+              {messageList.messages.map((message) => {
                 return (
-                  <tr key={message.id}>
+                  <tr key={message._id}>
                     <td>{message.name}</td>
                     {message.emailAddress.length < 40 ? (
                       <td>{message.emailAddress}</td>
@@ -107,7 +126,7 @@ const AdminMode = () => {
         </div>
       ) : null}
     </div>
-  );
+  ) : null;
 };
 
 export default AdminMode;
