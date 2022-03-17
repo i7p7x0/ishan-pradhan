@@ -8,6 +8,9 @@ import { FaFolderOpen, FaCheckCircle } from "react-icons/fa";
 import "../style/admin-mode.css";
 
 const AdminMode = () => {
+  //
+  const [fetchCycle, setFetchCycle] = useState(1);
+
   // this state determines wheter to display a message or display entire messages table
   const [detail, setDetail] = useState({
     show: false,
@@ -18,6 +21,7 @@ const AdminMode = () => {
     message: "",
   });
 
+  // store fetched messages from collection in this state
   const [messageList, setMessageList] = useState({
     messages: "",
     loaded: false,
@@ -35,8 +39,9 @@ const AdminMode = () => {
     };
     sendRequest();
     return () => (mounted = false);
-  }, []);
+  }, [[], fetchCycle]);
 
+  // this method is responsible opening and passing parameters in message detail component
   const handleViewDetailsClick = (id, name, emailAddress, subject, message) => {
     setDetail({
       show: !detail.show,
@@ -46,6 +51,16 @@ const AdminMode = () => {
       subject: subject === undefined ? "" : subject,
       message: message === undefined ? "" : message,
     });
+  };
+
+  const handleMarkMessageAsRead = async (id) => {
+    await fetch("http://localhost:5000/contact/", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: id }),
+    });
+
+    setFetchCycle(fetchCycle + 1);
   };
 
   return messageList.loaded ? (
@@ -92,7 +107,7 @@ const AdminMode = () => {
                     <td
                       onClick={() => {
                         handleViewDetailsClick(
-                          message.id,
+                          message._id,
                           message.name,
                           message.emailAddress,
                           message.subject,
@@ -102,7 +117,11 @@ const AdminMode = () => {
                     >
                       <FaFolderOpen size={20} />
                     </td>
-                    <td>
+                    <td
+                      onClick={() => {
+                        handleMarkMessageAsRead(message._id);
+                      }}
+                    >
                       <FaCheckCircle size={20} />
                     </td>
                   </tr>
