@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 // routes
 const contactRoutes = require("./routes/contact");
+const loginRoutes = require("./routes/login");
 
 //----------------- app declaration -----------------//
 const app = express();
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 
 //----------------- routes useage -----------------//
 app.use("/contact", contactRoutes);
+app.use("/login", loginRoutes);
 
 //----------------- connection string for mongodb database connection -----------------//
 const connectionString =
@@ -43,7 +45,7 @@ const connectionString =
 mongoose
   .connect(connectionString)
   .then((result) =>
-    app.listen(3000, () => {
+    app.listen(5000, () => {
       console.log("server started on port 3000");
     })
   )

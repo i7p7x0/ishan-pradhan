@@ -1,14 +1,17 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 import MessageDetails from "./MessageDetails";
 import { FaFolderOpen, FaCheckCircle } from "react-icons/fa";
 // DATA
-import messages from "../../../data/TEMP_MESSAGES";
 
 // STYLE
 import "../style/admin-mode.css";
 
 const AdminMode = () => {
+  //this state increases by 1 everytime a message is deleted and re-executes the useEffect hook to fetch new list of messages
+  const [fetchCycle, setFetchCycle] = useState(1);
+
+  // this state determines wheter to display a message or display entire messages table
   const [detail, setDetail] = useState({
     show: false,
     id: "",
@@ -18,6 +21,27 @@ const AdminMode = () => {
     message: "",
   });
 
+  // store fetched messages from collection in this state
+  const [messageList, setMessageList] = useState({
+    messages: "",
+    loaded: false,
+  });
+
+  // get list of messages from server
+  useEffect(() => {
+    let mounted = true;
+    const sendRequest = async () => {
+      const response = await fetch("http://localhost:5000/contact/");
+      const responseData = await response.json();
+      if (mounted) {
+        setMessageList({ messages: responseData, loaded: true });
+      }
+    };
+    sendRequest();
+    return () => (mounted = false);
+  }, [[], fetchCycle]);
+
+  // this method is responsible opening and passing parameters in message detail component
   const handleViewDetailsClick = (id, name, emailAddress, subject, message) => {
     setDetail({
       show: !detail.show,
@@ -29,7 +53,17 @@ const AdminMode = () => {
     });
   };
 
-  return (
+  const handleMarkMessageAsRead = async (id) => {
+    await fetch("http://localhost:5000/contact/", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: id }),
+    });
+
+    setFetchCycle(fetchCycle + 1);
+  };
+
+  return messageList.loaded ? (
     <div className="admin-mode-container">
       {!detail.show ? <h1>Messages</h1> : null}
       {!detail.show ? (
@@ -46,9 +80,9 @@ const AdminMode = () => {
               </tr>
             </thead>
             <tbody>
-              {messages.map((message) => {
+              {messageList.messages.map((message) => {
                 return (
-                  <tr key={message.id}>
+                  <tr key={message._id}>
                     <td>{message.name}</td>
                     {message.emailAddress.length < 40 ? (
                       <td>{message.emailAddress}</td>
@@ -73,7 +107,7 @@ const AdminMode = () => {
                     <td
                       onClick={() => {
                         handleViewDetailsClick(
-                          message.id,
+                          message._id,
                           message.name,
                           message.emailAddress,
                           message.subject,
@@ -83,7 +117,11 @@ const AdminMode = () => {
                     >
                       <FaFolderOpen size={20} />
                     </td>
-                    <td>
+                    <td
+                      onClick={() => {
+                        handleMarkMessageAsRead(message._id);
+                      }}
+                    >
                       <FaCheckCircle size={20} />
                     </td>
                   </tr>
@@ -107,7 +145,7 @@ const AdminMode = () => {
         </div>
       ) : null}
     </div>
-  );
+  ) : null;
 };
 
 export default AdminMode;

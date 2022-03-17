@@ -3,14 +3,12 @@ const ERROR = require("../data/Error");
 
 //----------------- get messages -----------------//
 exports.getMessages = (req, res, next) => {
-  console.log(
-    Message.find((err, message) => {
-      if (err) {
-        res.json(ERROR);
-      }
-      res.json(message);
-    })
-  );
+  Message.find((err, message) => {
+    if (err) {
+      res.json(ERROR);
+    }
+    res.json(message);
+  });
 };
 //----------------- post message -----------------//
 exports.postMessages = (req, res, next) => {

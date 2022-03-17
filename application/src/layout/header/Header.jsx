@@ -15,11 +15,7 @@ const Header = () => {
         <UserCard />
       </div>
       <div className="header-pc-container">
-        <NavLink
-          to="/home"
-          className="header-pc-link"
-          activeClassName="header-pc-link-selected"
-        >
+        <NavLink to="/home" className="header-pc-link">
           {({ isActive }) =>
             isActive ? (
               <div className="header-pc-button-selected">
