@@ -12,15 +12,26 @@
 
 .header-pc-link {
   text-decoration: none;
+  color: $font-color-blue;
 }
 
-.header-pc-button {
-  color: $font-color-blue;
+.header-pc-link-selected {
+  color: $font-color-light-primary;
 }
 
 .header-pc-icon {
   font-weight: bolder;
   font-size: 32px;
+}
+
+.header-pc-button-static {
+  color: $font-color-blue;
+}
+
+// Selected link style
+
+.header-pc-button-selected {
+  color: $font-color-light-primary;
 }
 
 @media screen and (min-width: $min-width-laptop) {

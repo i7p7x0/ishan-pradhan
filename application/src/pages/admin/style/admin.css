@@ -24,12 +24,9 @@ iii.set page background color
   padding: 5%;
   display: -ms-grid;
   display: grid;
-  overflow: scroll;
   -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  height: 100vh;
-  overflow: scroll;
 }
 /*# sourceMappingURL=admin.css.map */

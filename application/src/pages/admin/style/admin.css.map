@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,EAAE;EACX,OAAO,EAAE,IAAI;EACb,QAAQ,EAAE,MAAM;EAChB,qBAAqB,EAAE,cAAc;EACrC,kBAAkB,EAAE,IAAI;EACxB,MAAM,EAAE,KAAK;EACb,QAAQ,EAAE,MAAM;CACjB",
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,EAAE;EACX,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,kBAAkB,EAAE,IAAI;CACzB",
     "sources": [
         "admin.scss",
         "../../../style/root.scss",

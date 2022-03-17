@@ -3,9 +3,6 @@
 .admin-container {
   padding: 5%;
   display: grid;
-  overflow: scroll;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
-  height: 100vh;
-  overflow: scroll;
 }
