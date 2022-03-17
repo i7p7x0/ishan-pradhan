@@ -160,7 +160,7 @@ const ContactForm = () => {
    This method handles action after user presses submit
 
   */
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     setUserInputValidity(() => {
@@ -178,7 +178,16 @@ const ContactForm = () => {
       formValidations.validateSubject(userInput.subject).isValidated &&
       formValidations.validateMessage(userInput.message).isValidated
     ) {
-      console.log("Hello World");
+      await fetch("http://localhost:5000/contact/", {
+        method: "POST",
+        headers: { "Content-Type": "Application/Json" },
+        body: JSON.stringify({
+          name: userInput.fullName,
+          emailAddress: userInput.emailAddress,
+          subject: userInput.subject,
+          message: userInput.message,
+        }),
+      });
     }
   };
 
@@ -280,7 +289,11 @@ const ContactForm = () => {
                 })
               : null}
           </Form.Group>
-          <Button variant="outline-success" type="submit" onClick={handleFormSubmit}>
+          <Button
+            variant="outline-success"
+            type="submit"
+            onClick={handleFormSubmit}
+          >
             Send
           </Button>
         </Form>
