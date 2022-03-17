@@ -34,3 +34,13 @@
 .contact-card-icon-false {
   color: $false;
 }
+
+@media screen and (min-width: $min-width-tablet) {
+  .contact-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 5%;
+    white-space: nowrap;
+  }
+}

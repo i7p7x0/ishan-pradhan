@@ -40,15 +40,24 @@ iii.set page background color
 
 .header-pc-link {
   text-decoration: none;
+  color: #08d9d6;
 }
 
-.header-pc-button {
-  color: #08d9d6;
+.header-pc-link-selected {
+  color: #ffffff;
 }
 
 .header-pc-icon {
   font-weight: bolder;
   font-size: 32px;
+}
+
+.header-pc-button-static {
+  color: #08d9d6;
+}
+
+.header-pc-button-selected {
+  color: #ffffff;
 }
 
 @media screen and (min-width: 1024px) {

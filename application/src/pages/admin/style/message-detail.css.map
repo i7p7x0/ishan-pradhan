@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,0BAA0B,CAAC;EACzB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;CACpB;;AAED,AAAA,mBAAmB,CAAC;EAClB,WAAW,EAAE,IAAI;EACjB,KAAK,EEKU,OAAO;CFJvB",
+    "sources": [
+        "message-detail.scss",
+        "../../../style/root.scss",
+        "../../../style/variables/_color-variables.scss",
+        "../../../style/variables/_screen-size.scss",
+        "../../../style/mixins/_mixins.scss",
+        "../../../style/variables/_font-variables.scss"
+    ],
+    "names": [],
+    "file": "message-detail.css"
+}

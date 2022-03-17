@@ -1,0 +1,16 @@
+@import "../../../style/root";
+
+.message-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-list-col {
+  margin-right: 5%;
+  white-space: nowrap;
+}
+
+.messsages-list-container {
+  align-items: center;
+  justify-content: center;
+}

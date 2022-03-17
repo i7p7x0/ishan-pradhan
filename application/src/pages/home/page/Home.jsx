@@ -15,7 +15,7 @@ const Home = () => {
         <h1 className="home-header">Ishan Pradhan</h1>
         <hr />
       </div>
-      <Carousel interval="3000" controls={false} indicators={false} slide>
+      <Carousel interval="2000" controls={false} indicators={false} slide>
         <Carousel.Item>
           <HomeCarouselItem title="Developer." titleIndex="0" />
         </Carousel.Item>

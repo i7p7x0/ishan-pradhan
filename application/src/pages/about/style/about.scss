@@ -15,6 +15,9 @@
 }
 
 @media screen and(min-width:$min-width-laptop) {
+  .mobile-only {
+    display: none;
+  }
   .about-container {
     display: grid;
     grid-template-areas:
@@ -23,6 +26,7 @@
       "aboutmefordevelopers aboutmefordevelopers aboutmefordevelopers";
     height: 100vh;
     overflow: scroll;
+    padding-top: 2%;
   }
   .about-child-about-me-container {
     grid-area: aboutme;
@@ -30,8 +34,8 @@
   .about-child-about-my-properties-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    text-align: right;
+    justify-content: center;
+    text-align: left;
     grid-area: aboutmyproperties;
   }
   .about-child-about-my-can-dos-container {
