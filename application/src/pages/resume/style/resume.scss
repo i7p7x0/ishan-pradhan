@@ -6,7 +6,28 @@
 
 @media screen and (min-width: $min-width-laptop) {
   .resume-container {
+    display: grid;
+    grid-template-areas:
+      "resume-header resume-header"
+      "resume-education resume-education"
+      "resume-experience resume-top-skill";
+    justify-content: center;
+    align-items: left;
     height: 100vh;
     overflow: scroll;
+    padding-top: 2%;
+  }
+  .resume-header-container {
+    grid-area: resume-header;
+  }
+  .resume-education {
+    grid-area: resume-education;
+  }
+  .resume-experience {
+    grid-area: resume-experience;
+    margin-right: 10%;
+  }
+  .resume-top-skill {
+    grid-area: resume-top-skill;
   }
 }

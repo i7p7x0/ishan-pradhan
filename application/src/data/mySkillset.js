@@ -173,6 +173,9 @@ const mySkillset = [
       {
         key: 37,
         value: "Jira",
+      },{
+        key: 38,
+        value: "npm",
       },
     ],
   },

@@ -13,15 +13,16 @@ const Resume = () => {
   return (
     <div className="resume-container">
       <div className="resume-child resume-header-container">
-        <h2 className="resume-header">Resume</h2><hr/>
+        <h1 className="resume-header">Resume</h1>
+        <hr />
       </div>
-      <div className="resume-container-child">
+      <div className="resume-container-child resume-education">
         <ResumeEducation />
       </div>
-      <div className="resume-container-child">
+      <div className="resume-container-child resume-experience">
         <ResumeExperience />
       </div>
-      <div className="resume-container-child">
+      <div className="resume-container-child resume-top-skill">
         <ResumeTopSkills />
       </div>
     </div>

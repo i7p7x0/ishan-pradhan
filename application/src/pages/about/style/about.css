@@ -57,12 +57,16 @@ iii.set page background color
 }
 
 @media screen and (min-width: 1024px) {
+  .mobile-only {
+    display: none;
+  }
   .about-container {
     display: -ms-grid;
     display: grid;
         grid-template-areas: "aboutme aboutme aboutmyproperties" "aboutmycandos aboutmycandos aboutmycandos" "aboutmefordevelopers aboutmefordevelopers aboutmefordevelopers";
     height: 100vh;
     overflow: scroll;
+    padding-top: 2%;
   }
   .about-child-about-me-container {
     -ms-grid-row: 1;
@@ -78,10 +82,10 @@ iii.set page background color
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    text-align: right;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: left;
     -ms-grid-row: 1;
     -ms-grid-column: 3;
     grid-area: aboutmyproperties;

@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
 // CUSTOM COMPONENTS
+import postMessage from "../../../requests/post/postMessage";
 import * as formValidations from "../../../scripts/validations/ValidateUserInput";
 
 import "../style/contact-form.css";
@@ -160,7 +161,7 @@ const ContactForm = () => {
    This method handles action after user presses submit
 
   */
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     setUserInputValidity(() => {
@@ -178,14 +179,29 @@ const ContactForm = () => {
       formValidations.validateSubject(userInput.subject).isValidated &&
       formValidations.validateMessage(userInput.message).isValidated
     ) {
-      console.log("Hello World");
+      postMessage(
+        userInput.fullName,
+        userInput.emailAddress,
+        userInput.subject,
+        userInput.message
+      );
+      // await fetch("http://localhost:5000/contact/", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "Application/Json" },
+      //   body: JSON.stringify({
+      //     name: userInput.fullName,
+      //     emailAddress: userInput.emailAddress,
+      //     subject: userInput.subject,
+      //     message: userInput.message,
+      //   }),
+      // });
     }
   };
 
   return (
     <div className="contact-form-container">
       <div className="contact-form-header-container">
-        <h2 className="contact-form-header">How can I help?</h2>
+        <h2 className="contact-form-header">How can I help you?</h2>
       </div>
       <div className="contact-form-body-container">
         <Form>
@@ -280,7 +296,11 @@ const ContactForm = () => {
                 })
               : null}
           </Form.Group>
-          <Button variant="outline-success" type="submit" onClick={handleFormSubmit}>
+          <Button
+            variant="outline-success"
+            type="submit"
+            onClick={handleFormSubmit}
+          >
             Send
           </Button>
         </Form>
