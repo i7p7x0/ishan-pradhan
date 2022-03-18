@@ -31,7 +31,9 @@ const AdminMode = () => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/contact/");
+      const response = await fetch("http://localhost:5000/contact/", {
+        headers: { authorization: localStorage.token },
+      });
       const responseData = await response.json();
       if (mounted) {
         setMessageList({ messages: responseData, loaded: true });

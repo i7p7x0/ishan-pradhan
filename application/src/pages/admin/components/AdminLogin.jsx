@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useJwt } from "react-jwt";
 // CUSTOM COMPONENTS
 import postLogin from "../../../requests/post/postLogin";
 
@@ -7,6 +8,7 @@ import postLogin from "../../../requests/post/postLogin";
 import "../style/admin-login.css";
 
 const AdminLogin = (props) => {
+  const { decodedToken, isExpired } = useJwt("Hello");
   // this state holds user input
   const [loginData, setLoginData] = useState({
     username: "",
@@ -39,7 +41,16 @@ const AdminLogin = (props) => {
   // this method sends login request to server after clicking submit button
   const handleLoginState = async (username, password) => {
     props.handleLoginState();
-    postLogin(loginData.username, loginData.password);
+    const response = await fetch("http://localhost:5000/login/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    });
+    const responseData = await response.json();
+    localStorage.setItem("token", responseData.accessToken);
   };
 
   return (
