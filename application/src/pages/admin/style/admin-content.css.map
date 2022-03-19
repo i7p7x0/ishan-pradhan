@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM;EAClC,AAAA,wBAAwB,CAAC;IACvB,OAAO,EAAE,IAAI;IACb,MAAM,EAAE,KAAK;IACb,QAAQ,EAAE,MAAM;IAChB,OAAO,EAAE,EAAE;GACZ;EAED,AAAA,aAAa,CAAC;IACZ,MAAM,EAAE,EAAE;IACV,WAAW,EAAE,MAAM;GACpB",
+    "sources": [
+        "admin-content.scss",
+        "../../../style/root.scss",
+        "../../../style/variables/_color-variables.scss",
+        "../../../style/variables/_screen-size.scss",
+        "../../../style/mixins/_mixins.scss",
+        "../../../style/variables/_font-variables.scss"
+    ],
+    "names": [],
+    "file": "admin-content.css"
+}

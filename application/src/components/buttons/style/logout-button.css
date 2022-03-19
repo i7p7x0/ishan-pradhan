@@ -20,8 +20,15 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-.message-detail-heading {
-  color: #b8405e;
-  font-weight: bold;
+.logout-button {
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  border-radius: 9px;
+  padding: 5px;
 }
-/*# sourceMappingURL=message-detail.css.map */
+
+.logout-button-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+/*# sourceMappingURL=logout-button.css.map */

@@ -7,7 +7,7 @@ import "./style/admin-button.css";
 
 const AdminButton = () => {
   return (
-    <Link to="/admin" className="admin-button-link">
+    <Link to="/login" className="admin-button-link">
       <div className="admin-button">
         <MdAdminPanelSettings className="admin-button-icon" size={32} />
         View as Admin

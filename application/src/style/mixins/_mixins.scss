@@ -14,6 +14,14 @@ iii.set page background color
   font-family: $font-family-primary;
 }
 
+@mixin static-central {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin page-layout-no-height {
   background-color: $background-color-light-primary;
   display: flex;

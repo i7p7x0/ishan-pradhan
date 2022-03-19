@@ -1,13 +1,6 @@
 @import "../../../style/root";
 
-.message-details-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.message-detail-key {
-  font-weight: bold;
+.message-detail-heading {
   color: $font-color-red;
+  font-weight: bold;
 }

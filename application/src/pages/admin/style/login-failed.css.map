@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,wBAAwB,CAAC;EImCvB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,IAAI;EACf,KAAK,EFvBU,OAAO;CFZvB",
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,uBAAuB,CAAC;EIetB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,MAAM,EAAE,IAAI;EACZ,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CJjBpB",
     "sources": [
-        "about-my-properties.scss",
+        "login-failed.scss",
         "../../../style/root.scss",
         "../../../style/variables/_color-variables.scss",
         "../../../style/variables/_screen-size.scss",
@@ -10,5 +10,5 @@
         "../../../style/variables/_font-variables.scss"
     ],
     "names": [],
-    "file": "about-my-properties.css"
+    "file": "login-failed.css"
 }

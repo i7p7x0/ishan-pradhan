@@ -20,8 +20,20 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-.message-detail-heading {
-  color: #b8405e;
-  font-weight: bold;
+.login-failed-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-/*# sourceMappingURL=message-detail.css.map */
+/*# sourceMappingURL=login-failed.css.map */
