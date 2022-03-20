@@ -20,8 +20,20 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
+.message-detail-container {
+  background-color: #382933;
+  border-radius: 8px;
+  padding: 2%;
+  color: #ffffff;
+  text-align: center;
+}
+
 .message-detail-heading {
   color: #b8405e;
   font-weight: bold;
+}
+
+.message-detail-close-button {
+  margin-top: 2%;
 }
 /*# sourceMappingURL=message-detail.css.map */

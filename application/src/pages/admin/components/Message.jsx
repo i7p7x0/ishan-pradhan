@@ -19,6 +19,7 @@ const Message = () => {
   const token = useSelector((state) => state.authentication.token);
   const [messages, setMessages] = useState({ messages: [], loaded: false });
 
+  // this fetches messages from database everytime the fetch cycle is changed
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
@@ -46,6 +47,7 @@ const Message = () => {
     });
   };
 
+  // this deletes message and changes fetch cycle to send fetch request again
   const handleMarkMessageAsRead = async (id) => {
     await fetch("http://localhost:5000/contact/", {
       method: "DELETE",

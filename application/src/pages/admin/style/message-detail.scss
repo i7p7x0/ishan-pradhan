@@ -1,6 +1,19 @@
 @import "../../../style/root";
 
+.message-detail-container {
+  $background-color-dark-primary: #382933;
+  background-color: $background-color-dark-primary;
+  border-radius: 8px;
+  padding: 2%;
+  color: $font-color-light-primary;
+  text-align: center;
+}
+
 .message-detail-heading {
   color: $font-color-red;
   font-weight: bold;
+}
+
+.message-detail-close-button {
+  margin-top: 2%;
 }

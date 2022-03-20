@@ -33,4 +33,10 @@ iii.set page background color
     white-space: nowrap;
   }
 }
+
+.admin-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=admin-content.css.map */

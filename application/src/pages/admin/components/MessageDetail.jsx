@@ -19,6 +19,8 @@ const MessageDetail = (props) => {
       <span className="message-detail-body">{props.message}</span>
       <br />
       <Button
+        className="message-detail-close-button"
+        variant="light"
         onClick={() => {
           props.handleViewDetailsClick();
         }}
