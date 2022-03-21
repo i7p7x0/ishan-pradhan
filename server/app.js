@@ -7,6 +7,8 @@ require("dotenv").config();
 const contactRoutes = require("./routes/contact");
 const loginRoutes = require("./routes/login");
 const experienceRoutes = require("./routes/experience");
+const educationRoutes = require("./routes/education");
+const aboutRoutes = require("./routes/about");
 
 //----------------- app declaration -----------------//
 const app = express();
@@ -34,6 +36,8 @@ app.use((req, res, next) => {
 app.use("/contact", contactRoutes);
 app.use("/login", loginRoutes);
 app.use("/experience", experienceRoutes);
+app.use("/education", educationRoutes);
+app.use("/about", aboutRoutes);
 //----------------- connection string for mongodb database connection -----------------//
 const connectionString =
   "mongodb+srv://" +
