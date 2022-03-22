@@ -19,7 +19,18 @@ exports.postMessages = async (req, res, next) => {
     subject: req.body.subject,
     message: req.body.message,
   });
-  await message.save();
+  try {
+    if (!Validations.valdidateMessage(message)) {
+      throw new Error("Error");
+    }
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await message.save();
+  } catch (error) {
+    return res.json(fatalError);
+  }
 
   return res.send("saved");
 };
