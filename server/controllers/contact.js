@@ -8,7 +8,12 @@ const fatalError = require("../constants/errors/FatalError");
 
 //----------------- get messages -----------------//
 exports.getMessages = async (req, res, next) => {
-  const message = await Message.find();
+  let message;
+  try {
+    contact = message = await Message.find();
+  } catch (error) {
+    return res.json(fatalError);
+  }
   res.json(message);
 };
 //----------------- post message -----------------//
@@ -35,19 +40,33 @@ exports.postMessages = async (req, res, next) => {
   return res.send("saved");
 };
 //----------------- delete message -----------------//
-exports.deleteMessages = (req, res, next) => {
+exports.deleteMessages = async (req, res, next) => {
   const id = req.body.id;
-  Message.deleteOne({ _id: id }, (err) => {
-    if (err !== null) {
-      return res.json(ERROR);
+  try {
+    if (id === undefined) {
+      throw new Error("Error");
     }
-  });
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await Message.deleteOne({ _id: id });
+  } catch (error) {
+    return res.json(fatalError);
+  }
+
   return res.send("deleted");
 };
 
 //----------------- get contacts -----------------//
 exports.getContact = async (req, res, next) => {
-  const contact = await Contact.find();
+  let contact;
+  try {
+    contact = await Contact.find();
+  } catch (error) {
+    return res.json(fatalError);
+  }
+
   res.json(contact);
 };
 //----------------- post contacts -----------------//
