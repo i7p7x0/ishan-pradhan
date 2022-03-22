@@ -3,13 +3,9 @@ const Contact = require("../models/Contact");
 const ERROR = require("../data/Error");
 
 //----------------- get messages -----------------//
-exports.getMessages = (req, res, next) => {
-  Message.find((err, message) => {
-    if (err) {
-      return res.json(ERROR);
-    }
-    res.json(message);
-  });
+exports.getMessages = async(req, res, next) => {
+  const message = await Message.find();
+  res.json(message);
 };
 //----------------- post message -----------------//
 exports.postMessages = (req, res, next) => {
@@ -35,18 +31,14 @@ exports.deleteMessages = (req, res, next) => {
 };
 
 //----------------- get contacts -----------------//
-exports.getContact = (req, res, next) => {
-  Contact.find((err, contact) => {
-    if (err) {
-      res.json(ERROR);
-    }
-    res.json(contact);
-  });
+exports.getContact = async(req, res, next) => {
+  const contact = await Contact.find();
+  res.json(contact);
 };
 //----------------- post contacts -----------------//
 exports.addContact = (req, res, next) => {
   const contact = new Contact({
-    contact:"contact",
+    contact: "contact",
     phoneNumber: req.body.phoneNumber,
     emailAddress: req.body.emailAddress,
     location: req.body.location,
@@ -59,7 +51,6 @@ exports.addContact = (req, res, next) => {
 };
 //----------------- patch contacts -----------------//
 exports.updateContact = (req, res, next) => {
-
   const newContact = new Contact({
     phoneNumber: req.body.phoneNumber,
     emailAddress: req.body.emailAddress,
@@ -69,7 +60,7 @@ exports.updateContact = (req, res, next) => {
   });
 
   Contact.updateOne(
-    { contact:"contact" },
+    { contact: "contact" },
     {
       phoneNumber: newContact.phoneNumber,
       emailAddress: newContact.emailAddress,

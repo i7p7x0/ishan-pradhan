@@ -54,6 +54,7 @@ const EditSite = () => {
 
   return (
     <div className="edit-site-container">
+      <h2>Edit page content</h2>
       {!editPageRendered ? (
         <>
           {" "}

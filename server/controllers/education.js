@@ -2,13 +2,9 @@ const Education = require("../models/Education");
 const ERROR = require("../data/Error");
 
 //----------------- get education -----------------//
-exports.getEducation = (req, res, next) => {
-  Education.find((err, education) => {
-    if (err) {
-      return res.json(ERROR);
-    }
-    res.json(education);
-  });
+exports.getEducation = async (req, res, next) => {
+  const education = await Education.find();
+  res.json(education);
 };
 //----------------- post education -----------------//
 

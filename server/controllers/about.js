@@ -3,13 +3,9 @@ const Property = require("../models/Property");
 const Skill = require("../models/Skill");
 const ERROR = require("../data/Error");
 //----------------- get bio -----------------//
-exports.getBio = (req, res, next) => {
-  Bio.find((err, bio) => {
-    if (err) {
-      return res.json(ERROR);
-    }
-    res.json(bio);
-  });
+exports.getBio = async(req, res, next) => {
+  const bio = await Bio.find();
+  res.json(bio);
 };
 //----------------- post bio -----------------//
 exports.addBio = (req, res, next) => {
@@ -37,13 +33,9 @@ exports.updateBio = (req, res, next) => {
   return res.send("updated");
 };
 //----------------- get properties -----------------//
-exports.getProperties = (req, res, next) => {
-  Property.find((err, property) => {
-    if (err) {
-      return res.json(ERROR);
-    }
-    res.json(property);
-  });
+exports.getProperties = async(req, res, next) => {
+  const property = await Property.find();
+  res.json(property);
 };
 //----------------- post property -----------------//
 exports.addProperty = (req, res, next) => {
@@ -86,13 +78,9 @@ exports.updateProperty = (req, res, next) => {
   return res.send("updated");
 };
 //----------------- get skill -----------------//
-exports.getSkill = (req, res, next) => {
-  Skill.find((err, skill) => {
-    if (err) {
-      return res.json(ERROR);
-    }
-    res.json(skill);
-  });
+exports.getSkill = async(req, res, next) => {
+  const skill = await Skill.find();
+  res.json(skill);
 };
 //----------------- post skill -----------------//
 exports.addSkill = (req, res, next) => {

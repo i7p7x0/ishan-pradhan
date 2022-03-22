@@ -1,13 +1,9 @@
 const ExperienceModels = require("../models/Experience");
 
 //----------------- get experiences -----------------//
-exports.getExperience = (req, res, next) => {
-  ExperienceModels.Experience.find((err, experience) => {
-    if (err) {
-      res.json(err);
-    }
-    res.json(experience);
-  });
+exports.getExperience = async (req, res, next) => {
+  const experience = await ExperienceModels.Experience.find();
+  res.json(experience);
 };
 
 //----------------- post experience -----------------//
