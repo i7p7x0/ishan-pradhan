@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,wBAAwB,CAAC;EACvB,aAAa,EAAE,EAAE;CAClB;;AAED,AAAA,qBAAqB,CAAC;EACpB,aAAa,EAAE,EAAE;CAClB",
+    "sources": [
+        "edit-about-me.scss",
+        "../../../style/root.scss",
+        "../../../style/variables/_color-variables.scss",
+        "../../../style/variables/_screen-size.scss",
+        "../../../style/mixins/_mixins.scss",
+        "../../../style/variables/_font-variables.scss"
+    ],
+    "names": [],
+    "file": "edit-about-me.css"
+}

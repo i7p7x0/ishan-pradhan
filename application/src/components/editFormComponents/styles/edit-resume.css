@@ -20,7 +20,11 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-.admin-login-form-container {
-  width: 50%;
+.edit-resume-container {
+  margin-bottom: 2%;
 }
-/*# sourceMappingURL=admin-login.css.map */
+
+.edit-resume-select {
+  margin-bottom: 2%;
+}
+/*# sourceMappingURL=edit-resume.css.map */

@@ -1,0 +1,5 @@
+@import "../../../style/root";
+
+.login-form-container {
+  @include static-central;
+}

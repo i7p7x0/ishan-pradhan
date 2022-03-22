@@ -1,0 +1,5 @@
+@import "../../../style/root";
+
+.login-failed-container {
+  @include static-central;
+}

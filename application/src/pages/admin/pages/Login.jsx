@@ -1,17 +1,21 @@
 import { React, useState } from "react";
-import { Button, Form } from "react-bootstrap";
-// CUSTOM COMPONENTS
-import postLogin from "../../../requests/post/postLogin";
+import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import LogoutButton from "../../../components/buttons/LogoutButton";
+import { useDispatch } from "react-redux";
+import * as authenticationActions from "../../../stores/authentication/actions/Authentication";
 
 // STYLE
-import "../style/admin-login.css";
+import "../style/login.css";
 
-const AdminLogin = (props) => {
+const Login = (props) => {
+  const dispatch = useDispatch();
   // this state holds user input
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
   });
+
   //  set state based on user input change
   const handleUserInput = (event) => {
     event.preventDefault();
@@ -33,17 +37,28 @@ const AdminLogin = (props) => {
         };
       });
     }
-    console.log(loginData);
   };
 
   // this method sends login request to server after clicking submit button
   const handleLoginState = async (username, password) => {
-    props.handleLoginState();
-    postLogin(loginData.username, loginData.password);
+    dispatch(authenticationActions.logoutAdmin());
+    const response = await fetch("http://localhost:5000/login/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    });
+    const responseData = await response.json();
+    if (responseData.accessToken === "invalid") {
+      return dispatch(authenticationActions.loginFailed());
+    }
+    dispatch(authenticationActions.loginAdmin(responseData.accessToken));
   };
 
   return (
-    <div className="admin-login-form-container">
+    <div className="login-form-container">
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <h1>Login as admin</h1>
@@ -51,7 +66,7 @@ const AdminLogin = (props) => {
 
           <Form.Control
             type="text"
-            placeholder="Enter email"
+            placeholder="Enter username"
             onChange={handleUserInput}
             id="form-username"
             value={loginData.username}
@@ -69,21 +84,18 @@ const AdminLogin = (props) => {
             value={loginData.password}
           />
         </Form.Group>
-        <Button
-          variant="primary"
-          type="submit"
-          onClick={(event) => {
-            event.preventDefault();
+
+        <Link
+          to="/admin"
+          onClick={() => {
             handleLoginState(loginData.username, loginData.password);
           }}
         >
-          Submit
-        </Button>
+          <Button variant="primary">Submit</Button>
+        </Link>
       </Form>
     </div>
   );
 };
 
-export default AdminLogin;
-
-<div></div>;
+export default Login;

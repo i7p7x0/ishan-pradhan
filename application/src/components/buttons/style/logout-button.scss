@@ -1,0 +1,13 @@
+@import "../../../style/root";
+
+.logout-button {
+  font-size: 16px;
+  border: 1px solid $background-color-light-primary;
+  border-radius: 9px;
+  padding: 5px;
+}
+
+.logout-button-link {
+  text-decoration: none;
+  color: $background-color-light-primary;
+}
