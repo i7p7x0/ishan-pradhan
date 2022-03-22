@@ -3,7 +3,7 @@ const Property = require("../models/Property");
 const Skill = require("../models/Skill");
 const ERROR = require("../data/Error");
 //----------------- get bio -----------------//
-exports.getBio = async(req, res, next) => {
+exports.getBio = async (req, res, next) => {
   const bio = await Bio.find();
   res.json(bio);
 };
@@ -33,7 +33,7 @@ exports.updateBio = (req, res, next) => {
   return res.send("updated");
 };
 //----------------- get properties -----------------//
-exports.getProperties = async(req, res, next) => {
+exports.getProperties = async (req, res, next) => {
   const property = await Property.find();
   res.json(property);
 };
@@ -78,7 +78,7 @@ exports.updateProperty = (req, res, next) => {
   return res.send("updated");
 };
 //----------------- get skill -----------------//
-exports.getSkill = async(req, res, next) => {
+exports.getSkill = async (req, res, next) => {
   const skill = await Skill.find();
   res.json(skill);
 };
@@ -93,12 +93,8 @@ exports.addSkill = async (req, res, next) => {
   return res.send("saved");
 };
 //----------------- delete skill -----------------//
-exports.deleteSkill = (req, res, next) => {
+exports.deleteSkill = async (req, res, next) => {
   const id = req.body.id;
-  Skill.deleteOne({ _id: id }, (err) => {
-    if (err !== null) {
-      return res.json(ERROR);
-    }
-  });
+  await Skill.deleteOne({ _id: id });
   return res.send("deleted");
 };

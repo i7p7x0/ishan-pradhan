@@ -20,7 +20,7 @@ exports.postEducation = async (req, res, next) => {
   return res.send("saved");
 };
 
-//----------------- post education -----------------//
+//----------------- patch education -----------------//
 exports.updateEducation = (req, res, next) => {
   const newEducation = new Education({
     degreeName: req.body.degreeName,
@@ -45,12 +45,8 @@ exports.updateEducation = (req, res, next) => {
 };
 
 //----------------- delete education -----------------//
-exports.deleteEducation = (req, res, next) => {
+exports.deleteEducation = async (req, res, next) => {
   const id = req.body.id;
-  Education.deleteOne({ _id: id }, (err) => {
-    if (err !== null) {
-      return res.json(ERROR);
-    }
-  });
+  await Education.deleteOne({ _id: id });
   return res.send("deleted");
 };

@@ -36,12 +36,8 @@ exports.addExperience = async (req, res, next) => {
   res.send("Saved");
 };
 //----------------- delete experience -----------------//
-exports.deleteExperience = (req, res, next) => {
+exports.deleteExperience =async (req, res, next) => {
   const id = req.body.id;
-  ExperienceModels.Experience.deleteOne({ _id: id }, (err) => {
-    if (err !== null) {
-      return res.json(ERROR);
-    }
-  });
+  await ExperienceModels.Experience.deleteOne({ _id: id });
   return res.send("deleted");
 };
