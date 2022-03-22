@@ -8,7 +8,7 @@ exports.getEducation = async (req, res, next) => {
 };
 //----------------- post education -----------------//
 
-exports.postEducation = (req, res, next) => {
+exports.postEducation = async (req, res, next) => {
   const education = new Education({
     degreeName: req.body.degreeName,
     university: req.body.university,
@@ -16,7 +16,7 @@ exports.postEducation = (req, res, next) => {
     endDate: req.body.endDate,
     about: req.body.about,
   });
-  education.save();
+  await education.save();
   return res.send("saved");
 };
 

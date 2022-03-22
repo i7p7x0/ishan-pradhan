@@ -8,14 +8,14 @@ exports.getMessages = async(req, res, next) => {
   res.json(message);
 };
 //----------------- post message -----------------//
-exports.postMessages = (req, res, next) => {
+exports.postMessages = async (req, res, next) => {
   const message = new Message({
     name: req.body.name,
     emailAddress: req.body.emailAddress,
     subject: req.body.subject,
     message: req.body.message,
   });
-  message.save();
+ await message.save();
 
   return res.send("saved");
 };
@@ -36,7 +36,7 @@ exports.getContact = async(req, res, next) => {
   res.json(contact);
 };
 //----------------- post contacts -----------------//
-exports.addContact = (req, res, next) => {
+exports.addContact = async (req, res, next) => {
   const contact = new Contact({
     contact: "contact",
     phoneNumber: req.body.phoneNumber,
@@ -46,7 +46,7 @@ exports.addContact = (req, res, next) => {
     recruitment: req.body.recruitment,
   });
 
-  contact.save();
+  await contact.save();
   return res.send("saved");
 };
 //----------------- patch contacts -----------------//

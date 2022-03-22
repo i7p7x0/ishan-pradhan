@@ -8,13 +8,13 @@ exports.getBio = async(req, res, next) => {
   res.json(bio);
 };
 //----------------- post bio -----------------//
-exports.addBio = (req, res, next) => {
+exports.addBio = async (req, res, next) => {
   const bio = new bio({
     bio: "bio",
     content: req.body.content,
   });
 
-  contact.save();
+  await contact.save();
   return res.send("saved");
 };
 //----------------- patch bio -----------------//
@@ -38,7 +38,7 @@ exports.getProperties = async(req, res, next) => {
   res.json(property);
 };
 //----------------- post property -----------------//
-exports.addProperty = (req, res, next) => {
+exports.addProperty = async (req, res, next) => {
   const property = new Property({
     property: "property",
     age: req.body.age,
@@ -49,7 +49,7 @@ exports.addProperty = (req, res, next) => {
     experience: req.body.experience,
   });
 
-  property.save();
+  await property.save();
   return res.send("saved");
 };
 //----------------- patch bio -----------------//
@@ -83,13 +83,13 @@ exports.getSkill = async(req, res, next) => {
   res.json(skill);
 };
 //----------------- post skill -----------------//
-exports.addSkill = (req, res, next) => {
+exports.addSkill = async (req, res, next) => {
   const skill = new Skill({
     skillType: req.body.skillType,
     skillName: req.body.skillName,
   });
 
-  skill.save();
+  await skill.save();
   return res.send("saved");
 };
 //----------------- delete skill -----------------//

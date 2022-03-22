@@ -7,7 +7,7 @@ exports.getExperience = async (req, res, next) => {
 };
 
 //----------------- post experience -----------------//
-exports.addExperience = (req, res, next) => {
+exports.addExperience = async (req, res, next) => {
   const {
     title,
     employer,
@@ -32,7 +32,7 @@ exports.addExperience = (req, res, next) => {
     experiencePoints: newExperiencePoints,
   });
 
-  newExperience.save();
+  await newExperience.save();
   res.send("Saved");
 };
 //----------------- delete experience -----------------//
