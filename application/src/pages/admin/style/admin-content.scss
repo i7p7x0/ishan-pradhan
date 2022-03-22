@@ -1,0 +1,19 @@
+@import "../../../style/root";
+
+@media screen and(min-width:$min-width-laptop) {
+  .admin-content-container {
+    display: grid;
+    height: 100vh;
+    overflow: scroll;
+    padding: 2%;
+  }
+
+  .admin-button {
+    margin: 2%;
+    white-space: nowrap;
+  }
+}
+
+.admin-buttons {
+  display: flex;
+}

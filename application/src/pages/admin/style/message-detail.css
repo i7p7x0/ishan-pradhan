@@ -20,24 +20,20 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
-.message-details-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.message-detail-container {
+  background-color: #382933;
+  border-radius: 8px;
+  padding: 2%;
+  color: #ffffff;
+  text-align: center;
 }
 
-.message-detail-key {
-  font-weight: bold;
+.message-detail-heading {
   color: #b8405e;
+  font-weight: bold;
+}
+
+.message-detail-close-button {
+  margin-top: 2%;
 }
 /*# sourceMappingURL=message-detail.css.map */

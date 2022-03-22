@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*
+This scss file contains variables for colors used throughout the components of this website,
+For Example: background color, text color, component color
+*/
+/*
+This scss file contains variables for screen sizes used in the website ,
+Reference : 
+
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+
+*/
+/***************************************
+@mixin page-layout
+i. center page content
+ii.center page items
+iii.set page background color
+***************************************/
+@media screen and (min-width: 1024px) {
+  .admin-content-container {
+    display: -ms-grid;
+    display: grid;
+    height: 100vh;
+    overflow: scroll;
+    padding: 2%;
+  }
+  .admin-button {
+    margin: 2%;
+    white-space: nowrap;
+  }
+}
+
+.admin-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=admin-content.css.map */

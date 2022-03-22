@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,gBAAgB,CAAC;EACf,OAAO,EAAE,EAAE;EACX,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,kBAAkB,EAAE,IAAI;CACzB",
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,sBAAsB,CAAC;EACrB,aAAa,EAAE,EAAE;CAClB;;AAED,AAAA,mBAAmB,CAAC;EAClB,aAAa,EAAE,EAAE;CAClB",
     "sources": [
-        "admin.scss",
+        "edit-resume.scss",
         "../../../style/root.scss",
         "../../../style/variables/_color-variables.scss",
         "../../../style/variables/_screen-size.scss",
@@ -10,5 +10,5 @@
         "../../../style/variables/_font-variables.scss"
     ],
     "names": [],
-    "file": "admin.css"
+    "file": "edit-resume.css"
 }

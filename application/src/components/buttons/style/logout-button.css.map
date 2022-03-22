@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,cAAc,CAAC;EACb,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,GAAG,CAAC,KAAK,CEEc,OAAO;EFDtC,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,GAAG;CACb;;AAED,AAAA,mBAAmB,CAAC;EAClB,eAAe,EAAE,IAAI;EACrB,KAAK,EEL0B,OAAO;CFMvC",
+    "sources": [
+        "logout-button.scss",
+        "../../../style/root.scss",
+        "../../../style/variables/_color-variables.scss",
+        "../../../style/variables/_screen-size.scss",
+        "../../../style/mixins/_mixins.scss",
+        "../../../style/variables/_font-variables.scss"
+    ],
+    "names": [],
+    "file": "logout-button.css"
+}

@@ -1,28 +1,23 @@
-import { React, useState } from "react";
+import { React } from "react";
+import { useSelector } from "react-redux";
+
+import Loader from "../../../components/loader/Loader";
 
 // CUSTOM COMPONENTS
-import AdminMode from "../components/AdminMode";
-import AdminLogin from "../components/AdminLogin";
-// STYLE
-import "../style/admin.css";
+import LoginFailed from "../components/LoginFailed";
+import AdminContent from "./AdminContent";
+
 const Admin = () => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
-
-  const handleLoginState = () => {
-    setLoggedIn(true);
-  };
-
+  const isLoggedIn = useSelector((state) => state.authentication);
   return (
     <div className="admin-container">
-      <div className="admin-container-child amdin-login-container">
-        {!isLoggedIn ? (
-          <AdminLogin handleLoginState={handleLoginState} />
-        ) : null}
-      </div>
-
-      <div className="admin-container-child amdin-login-container">
-        {isLoggedIn ? <AdminMode /> : null}
-      </div>
+      {isLoggedIn.token === "" ? (
+        <Loader />
+      ) : isLoggedIn.token === "invalid" ? (
+        <LoginFailed />
+      ) : (
+        <AdminContent />
+      )}
     </div>
   );
 };

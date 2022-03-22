@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,wBAAwB,CAAC;EI2BvB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,IAAI;EACf,KAAK,EFfU,OAAO;CFZvB",
+    "mappings": ";AEAA;;;EAGE;ACHF;;;;;;;;;;EAUE;ACVF;;;;;wCAKwC;AJHxC,AAAA,wBAAwB,CAAC;EImCvB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,IAAI;EACf,KAAK,EFvBU,OAAO;CFZvB",
     "sources": [
         "about-my-properties.scss",
         "../../../style/root.scss",
