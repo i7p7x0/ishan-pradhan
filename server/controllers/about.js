@@ -53,7 +53,7 @@ exports.addProperty = async (req, res, next) => {
   return res.send("saved");
 };
 //----------------- patch bio -----------------//
-exports.updateProperty = (req, res, next) => {
+exports.updateProperty = async (req, res, next) => {
   const newProperty = new Property({
     age: req.body.age,
     residence: req.body.residence,
@@ -63,7 +63,7 @@ exports.updateProperty = (req, res, next) => {
     experience: req.body.experience,
   });
 
-  Contact.updateOne(
+  await Contact.updateOne(
     { property: "property" },
     {
       age: newProperty.age,
@@ -72,8 +72,7 @@ exports.updateProperty = (req, res, next) => {
       address: newProperty.address,
       phoneNumber: newProperty.phoneNumber,
       experience: newPropertyy.experience,
-    },
-    (err) => {}
+    }
   );
   return res.send("updated");
 };

@@ -15,6 +15,6 @@ router
 router
   .route("/contactDetails/")
   .get(contactController.getContact)
-  .post(contactController.addContact)
+  // .post(contactController.addContact)
   .patch(contactController.updateContact);
 module.exports = router;

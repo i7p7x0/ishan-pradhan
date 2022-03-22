@@ -21,7 +21,7 @@ exports.postEducation = async (req, res, next) => {
 };
 
 //----------------- patch education -----------------//
-exports.updateEducation = (req, res, next) => {
+exports.updateEducation = async (req, res, next) => {
   const newEducation = new Education({
     degreeName: req.body.degreeName,
     university: req.body.university,
@@ -30,7 +30,7 @@ exports.updateEducation = (req, res, next) => {
     about: req.body.about,
   });
 
-  Contact.updateOne(
+  await Contact.updateOne(
     { id: req.body.id },
     {
       degreeName: newEducation.degreeName,
@@ -38,8 +38,7 @@ exports.updateEducation = (req, res, next) => {
       startDate: newEducation.startDate,
       endDate: newEducation.endDate,
       about: newEducation.about,
-    },
-    (err) => {}
+    }
   );
   return res.send("updated");
 };
