@@ -1,9 +1,19 @@
 const ExperienceModels = require("../models/Experience");
+const Validations = require("../utils/validateInput");
+// errors
+const fatalError = require("../constants/errors/FatalError");
+const inputError = require("../constants/errors/InputError");
+const noError = require("../constants/errors/NoError");
 
 //----------------- get experiences -----------------//
 exports.getExperience = async (req, res, next) => {
-  const experience = await ExperienceModels.Experience.find();
-  res.json(experience);
+  let experience;
+  try {
+    experience = await ExperienceModels.Experience.find();
+  } catch (error) {
+    return res.json(fatalError);
+  }
+  return res.json(experience);
 };
 
 //----------------- post experience -----------------//
@@ -31,13 +41,35 @@ exports.addExperience = async (req, res, next) => {
     employerAddress: employerAddress,
     experiencePoints: newExperiencePoints,
   });
+  try {
+    if (!Validations.validateExperience(newExperience)) {
+      throw new Error("Error");
+    }
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await newExperience.save();
+  } catch (error) {
+    return res.json(fatalError);
+  }
 
-  await newExperience.save();
-  res.send("Saved");
+  return res.json(noError);
 };
 //----------------- delete experience -----------------//
-exports.deleteExperience =async (req, res, next) => {
+exports.deleteExperience = async (req, res, next) => {
   const id = req.body.id;
-  await ExperienceModels.Experience.deleteOne({ _id: id });
-  return res.send("deleted");
+  try {
+    if (id === undefined) {
+      throw new Error("Error");
+    }
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await ExperienceModels.Experience.deleteOne({ _id: id });
+  } catch (error) {
+    return res.json(fatalError);
+  }
+  return res.json(noError);
 };

@@ -1,42 +1,34 @@
 // return types:boolean
 // return value: true if validation passsed and false if validation failed
 
+const { text } = require("body-parser");
+
+/*----------------- Validate Length ------------------------------
+Param 1 : string, param: 2 min length, param 3:max length
+----------------------------------------------------------------------*/
+const validateLength = (text, minLength, maxLength) => {
+  if (text.length >= minLength && text.length <= maxLength) {
+    return true;
+  }
+  return false;
+};
 /*----------------- Validate Phone Number ------------------------------
 Phone number should be 10-13 characters long and contain only numbers.
 ----------------------------------------------------------------------*/
 const validatePhoneNumber = (phoneNumber) => {
-  if (
-    phoneNumber.length >= 10 &&
-    phoneNumber.length <= 13 &&
-    /^\d+$/.test(phoneNumber)
-  ) {
+  if (validateLength(phoneNumber, 10, 13) && /^\d+$/.test(phoneNumber)) {
     return true;
   }
   return false;
 };
-/*----------------- Validate Phone Number ------------------------------
-Phone number should be 10-13 characters long and contain only numbers.
+/*----------------- Validate Username ------------------------------
+Phone number should be 3-16 characters long and contain only alphabets.
 ----------------------------------------------------------------------*/
 const validateUsername = (username) => {
   if (
-    username.length >= 3 &&
-    username.length <= 16 &&
+    validateLength(username, 3, 16) &&
     /^[a-zA-Z]/.test(username.replace(/\s/g, ""))
   ) {
-    return true;
-  }
-  return false;
-};
-
-const validateSubject = (subject) => {
-  if (subject.length >= 3 && subject.length <= 998) {
-    return true;
-  }
-  return false;
-};
-
-const validateMessageBody = (message) => {
-  if (message.length >= 10 && subject.length <= 10000) {
     return true;
   }
   return false;
@@ -47,22 +39,33 @@ Email address should be between 3-100 characters and should be a valid email typ
 --------------------------------------------------------------------------------*/
 const validateEmailAddress = (emailAddress) => {
   if (
-    emailAddress.length > 3 &&
-    emailAddress.length <= 100 &&
+    validateLength(emailAddress, 3, 100) &&
     /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailAddress)
   ) {
     return true;
   }
   return false;
 };
-
+/*----------------- Validate booeal --------------------------------------------
+value must be either true or false
+--------------------------------------------------------------------------------*/
 const validateBoolEntry = (entry) => {
   if (typeof entry === "boolean") {
     return true;
   }
   return false;
 };
+/*----------------- Validate year ----------------------------------------------
+Year must be 4 characters long and should only contain numbers
+--------------------------------------------------------------------------------*/
+const validateYear = (date) => {
+  if (validateLength(date, 4, 4) && /^\d+$/.test(date)) {
+    return true;
+  }
+  return false;
+};
 
+/*---------------------------Validation used in contact controller-------------*/
 const validateContact = (contact) => {
   if (
     contact.phoneNumber === undefined ||
@@ -83,7 +86,7 @@ const validateContact = (contact) => {
   }
   return true;
 };
-
+/*---------------------------Validation used in contact/message controller-------------*/
 const validateMessage = (message) => {
   if (
     message.name === undefined ||
@@ -96,13 +99,60 @@ const validateMessage = (message) => {
   if (
     !validateEmailAddress(message.emailAddress) ||
     !validateUsername(message.name) ||
-    !validateSubject(message.subject) ||
-    !validateMessageBody
+    !validateLength(message.subject, 3, 998) ||
+    !validateLength(message.message, 10, 1000)
   ) {
     return false;
   }
   return true;
 };
 
+/*---------------------------Validation used in education controller-------------*/
+const validateEducation = (education) => {
+  if (
+    education.degreeName === undefined ||
+    education.university === undefined ||
+    education.startDate === undefined ||
+    education.endDate === undefined ||
+    education.about === undefined
+  ) {
+    return false;
+  }
+  if (
+    !validateLength(education.degreeName, 10, 100) ||
+    !validateLength(education.university, 10, 100) ||
+    !validateYear(education.startDate) ||
+    !validateYear(education.endDate) ||
+    !validateLength(education.about, 10, 1000)
+  ) {
+    return false;
+  }
+  return true;
+};
+
+const validateExperience = (experience) => {
+  if (
+    experience.title === undefined ||
+    experience.employer === undefined ||
+    experience.domain === undefined ||
+    experience.from === undefined ||
+    experience.to === undefined ||
+    experience.employerAddress === undefined
+  ) {
+    return false;
+  }
+  if (
+    !validateLength(education.title, 10, 50) ||
+    !validateLength(education.employer, 10, 100) ||
+    !validateLength(education.domain, 10, 100) ||
+    !validateLength(education.from, 5, 20) ||
+    !validateLength(education.to, 5, 20) ||
+    !validateLength(education.employerAddress, 10, 1000)
+  ) {
+  }
+};
+
+exports.validateExperience = validateExperience;
+exports.validateEducation = validateEducation;
 exports.validateContact = validateContact;
 exports.valdidateMessage = validateMessage;

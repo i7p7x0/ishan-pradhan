@@ -5,6 +5,7 @@ const Validations = require("../utils/validateInput");
 // Errors
 const inputError = require("../constants/errors/InputError");
 const fatalError = require("../constants/errors/FatalError");
+const noError = require("../constants/errors/NoError");
 
 //----------------- get messages -----------------//
 exports.getMessages = async (req, res, next) => {
@@ -14,7 +15,7 @@ exports.getMessages = async (req, res, next) => {
   } catch (error) {
     return res.json(fatalError);
   }
-  res.json(message);
+  return res.json(message);
 };
 //----------------- post message -----------------//
 exports.postMessages = async (req, res, next) => {
@@ -37,7 +38,7 @@ exports.postMessages = async (req, res, next) => {
     return res.json(fatalError);
   }
 
-  return res.send("saved");
+  return res.json(noError);
 };
 //----------------- delete message -----------------//
 exports.deleteMessages = async (req, res, next) => {
@@ -55,7 +56,7 @@ exports.deleteMessages = async (req, res, next) => {
     return res.json(fatalError);
   }
 
-  return res.send("deleted");
+  return res.json(noError);
 };
 
 //----------------- get contacts -----------------//
@@ -67,7 +68,7 @@ exports.getContact = async (req, res, next) => {
     return res.json(fatalError);
   }
 
-  res.json(contact);
+  return res.json(contact);
 };
 //----------------- post contacts -----------------//
 /*---------------------------------------------------
@@ -118,5 +119,5 @@ exports.updateContact = async (req, res, next) => {
     return res.json(fatalError);
   }
 
-  return res.send("updated");
+  return res.json(noError);
 };
