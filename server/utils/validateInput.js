@@ -142,16 +142,67 @@ const validateExperience = (experience) => {
     return false;
   }
   if (
-    !validateLength(education.title, 10, 50) ||
-    !validateLength(education.employer, 10, 100) ||
-    !validateLength(education.domain, 10, 100) ||
-    !validateLength(education.from, 5, 20) ||
-    !validateLength(education.to, 5, 20) ||
-    !validateLength(education.employerAddress, 10, 1000)
+    !validateLength(experience.title, 10, 50) ||
+    !validateLength(experience.employer, 1, 100) ||
+    !validateLength(experience.domain, 5, 100) ||
+    !validateLength(experience.from, 5, 20) ||
+    !validateLength(experience.to, 5, 20) ||
+    !validateLength(experience.employerAddress, 10, 1000)
   ) {
+    return false;
   }
+  return true;
 };
 
+const validateBio = (bio) => {
+  console.log(bio.content);
+  if (bio.content === undefined) {
+    return false;
+  }
+  if (!validateLength(bio.content, 10, 50000)) {
+    return false;
+  }
+  return true;
+};
+
+const validateProperties = (property) => {
+  if (
+    property.age === undefined ||
+    property.residence === undefined ||
+    property.emailAddress === undefined ||
+    property.address === undefined ||
+    property.phoneNumber === undefined ||
+    property.experience === undefined
+  ) {
+    return false;
+  }
+  if (
+    !validateLength(property.age, 2, 2) ||
+    !validateLength(property.residence, 1, 60) ||
+    !validateEmailAddress(property.emailAddress) ||
+    !validateLength(property.experience, 5, 50)
+  ) {
+    return false;
+  }
+  return true;
+};
+
+const validateSkill = (skill) => {
+  if (skill.skillType === undefined || skill.skillName === undefined) {
+    return false;
+  }
+  if (
+    !validateLength(skill.skillType, 2, 25) ||
+    !validateLength(skill.skillName, 2, 25)
+  ) {
+    return false;
+  }
+  return true;
+};
+
+exports.validateSkill = validateSkill;
+exports.validateProperties = validateProperties;
+exports.validateBio = validateBio;
 exports.validateExperience = validateExperience;
 exports.validateEducation = validateEducation;
 exports.validateContact = validateContact;
