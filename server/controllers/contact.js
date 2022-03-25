@@ -1,6 +1,5 @@
 const Message = require("../models/Message");
 const Contact = require("../models/Contact");
-const ERROR = require("../data/Error");
 const Validations = require("../utils/validateInput");
 // Errors
 const inputError = require("../constants/errors/InputError");

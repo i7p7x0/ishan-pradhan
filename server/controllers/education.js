@@ -1,5 +1,4 @@
 const Education = require("../models/Education");
-const ERROR = require("../data/Error");
 const Validations = require("../utils/validateInput");
 // errors
 const fatalError = require("../constants/errors/FatalError");

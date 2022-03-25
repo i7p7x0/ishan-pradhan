@@ -18,26 +18,26 @@ exports.getBio = async (req, res, next) => {
   return res.json(bio);
 };
 //----------------- post bio -----------------//
-exports.addBio = async (req, res, next) => {
-  const bio = new Bio({
-    bio: "bio",
-    content: req.body.content,
-  });
-  try {
-    if (!Validations.validateBio(bio)) {
-      throw new Error("error");
-    }
-  } catch (error) {
-    return res.json(inputError);
-  }
-  try {
-    await bio.save();
-  } catch (error) {
-    return res.json(fatalError);
-  }
+// exports.addBio = async (req, res, next) => {
+//   const bio = new Bio({
+//     bio: "bio",
+//     content: req.body.content,
+//   });
+//   try {
+//     if (!Validations.validateBio(bio)) {
+//       throw new Error("error");
+//     }
+//   } catch (error) {
+//     return res.json(inputError);
+//   }
+//   try {
+//     await bio.save();
+//   } catch (error) {
+//     return res.json(fatalError);
+//   }
 
-  return res.json(noError);
-};
+//   return res.json(noError);
+// };
 //----------------- patch bio -----------------//
 exports.updateBio = async (req, res, next) => {
   const newBio = new Bio({
@@ -111,14 +111,14 @@ exports.updateProperty = async (req, res, next) => {
     experience: req.body.experience,
   });
   try {
-    if (!Validations.validateProperties(property)) {
+    if (!Validations.validateProperties(newProperty)) {
       throw new Error("error");
     }
   } catch (error) {
     return res.json(inputError);
   }
   try {
-    await Contact.updateOne(
+    await Property.updateOne(
       { property: "property" },
       {
         age: newProperty.age,
@@ -126,7 +126,7 @@ exports.updateProperty = async (req, res, next) => {
         emailAddress: newProperty.emailAddress,
         address: newProperty.address,
         phoneNumber: newProperty.phoneNumber,
-        experience: newPropertyy.experience,
+        experience: newProperty.experience,
       }
     );
   } catch (error) {

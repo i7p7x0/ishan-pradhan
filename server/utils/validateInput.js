@@ -177,7 +177,7 @@ const validateProperties = (property) => {
     return false;
   }
   if (
-    !validateLength(property.age, 2, 2) ||
+    !validateLength(property.age, 0, 3) ||
     !validateLength(property.residence, 1, 60) ||
     !validateEmailAddress(property.emailAddress) ||
     !validateLength(property.experience, 5, 50)

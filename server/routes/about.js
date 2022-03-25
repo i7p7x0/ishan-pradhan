@@ -6,7 +6,7 @@ const aboutController = require("../controllers/about");
 router
   .route("/bio")
   .get(aboutController.getBio)
-  .post(aboutController.addBio)
+  // .post(aboutController.addBio)
   .patch(aboutController.updateBio);
 //----------------- properties-routes -----------------//
 router
