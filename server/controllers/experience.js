@@ -41,6 +41,7 @@ exports.addExperience = async (req, res, next) => {
     employerAddress: employerAddress,
     experiencePoints: newExperiencePoints,
   });
+
   try {
     if (!Validations.validateExperience(newExperience)) {
       throw new Error("Error");
@@ -53,12 +54,12 @@ exports.addExperience = async (req, res, next) => {
   } catch (error) {
     return res.json(fatalError);
   }
-
   return res.json(noError);
 };
 //----------------- delete experience -----------------//
 exports.deleteExperience = async (req, res, next) => {
   const id = req.body.id;
+  console.log(id);
   try {
     if (id === undefined) {
       throw new Error("Error");
@@ -68,6 +69,31 @@ exports.deleteExperience = async (req, res, next) => {
   }
   try {
     await ExperienceModels.Experience.deleteOne({ _id: id });
+  } catch (error) {
+    return res.json(fatalError);
+  }
+  return res.json(noError);
+};
+
+exports.updateExperience = async (req, res, next) => {
+  const id = req.body.id;
+  const to = req.body.to;
+  try {
+    if (id === undefined || to === undefined) {
+      throw new Error("Error");
+    }
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    if (to.length < 4 || to.length > 10) {
+      throw new Error("Error");
+    }
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await ExperienceModels.Experience.updateOne({ _id: id }, { to: to });
   } catch (error) {
     return res.json(fatalError);
   }

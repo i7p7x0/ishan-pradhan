@@ -25,6 +25,7 @@ exports.postEducation = async (req, res, next) => {
     endDate: req.body.endDate,
     about: req.body.about,
   });
+  console.log(education);
   try {
     if (!Validations.validateEducation(education)) {
       throw new Error("");
@@ -49,6 +50,8 @@ exports.updateEducation = async (req, res, next) => {
     endDate: req.body.endDate,
     about: req.body.about,
   });
+
+  console.log(newEducation);
   try {
     if (!Validations.validateEducation(newEducation)) {
       throw new Error("");
@@ -57,8 +60,8 @@ exports.updateEducation = async (req, res, next) => {
     return res.json(inputError);
   }
   try {
-    await Contact.updateOne(
-      { id: req.body.id },
+    await Education.updateOne(
+      { _id: req.body._id },
       {
         degreeName: newEducation.degreeName,
         university: newEducation.university,
@@ -77,6 +80,7 @@ exports.updateEducation = async (req, res, next) => {
 //----------------- delete education -----------------//
 exports.deleteEducation = async (req, res, next) => {
   const id = req.body.id;
+  console.log(id);
   try {
     if (id === undefined) {
       throw new Error("Error");

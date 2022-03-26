@@ -8,6 +8,8 @@ import {
 } from "react-bootstrap";
 // STYLE
 import "./styles/edit-about-me.css";
+// DATA
+import parentSkills from "../../data/PARENTSKILLS";
 
 const EditAboutMe = (props) => {
   const [loaded, setLoaded] = useState({ properties: false });
@@ -19,6 +21,11 @@ const EditAboutMe = (props) => {
     address: "",
     phoneNumber: "",
     experience: "",
+  });
+  const [skillSet, setSkillSet] = useState({
+    id: "",
+    skillParent: "",
+    skillSet: "",
   });
 
   // get properties -> these values will be displayed in form placeholders.
@@ -168,6 +175,25 @@ const EditAboutMe = (props) => {
         if (propertiesResponseData.error) {
           alert(propertiesResponseData.errorMessage);
         } else if (!propertiesResponseData.error) {
+          alert("Updated successfully");
+        }
+        break;
+      case "addSkillSet":
+        const skillsResponse = await fetch(
+          "http://localhost:5000/about/skills",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              skillType: skillSet.skillParent,
+              skillName: skillSet.skillChild,
+            }),
+          }
+        );
+        const skillsResponseData = await skillsResponse.json();
+        if (skillsResponseData.error) {
+          alert(skillsResponseData.errorMessage);
+        } else if (!skillsResponseData.error) {
           alert("Updated successfully");
         }
         break;
@@ -377,17 +403,50 @@ const EditAboutMe = (props) => {
             <Form.Select
               className="edit-about-me-select"
               aria-label="Default select example"
+              onChange={(event) => {
+                setSkillSet((previousValue) => {
+                  return {
+                    id: previousValue.id,
+                    skillParent: event.target.value,
+                    skillChild: previousValue.skillChild,
+                  };
+                });
+              }}
             >
               <option>--Select skill type</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              {parentSkills.map((parentSkill) => {
+                return (
+                  <option key={parentSkill.id} value={parentSkill.name}>
+                    {parentSkill.name}
+                  </option>
+                );
+              })}
             </Form.Select>
             <InputGroup className="mb-3">
               <InputGroup.Text>Skill Name </InputGroup.Text>
-              <FormControl aria-label="Skill Name " placeholder="" />
+              <FormControl
+                value={skillSet.skillChild}
+                aria-label="Skill Name "
+                placeholder=""
+                onChange={(event) => {
+                  setSkillSet((previousValue) => {
+                    return {
+                      id: previousValue.id,
+                      skillParent: previousValue.skillParent,
+                      skillChild: event.target.value,
+                    };
+                  });
+                }}
+              />
             </InputGroup>{" "}
-            <Button variant="success">Done</Button>
+            <Button
+              variant="success"
+              id="addSkillSet"
+              onClick={handleSubmitClick}
+              // onClick={handleSubmitClick}
+            >
+              Done
+            </Button>
           </>
         ) : null}
       </div>
@@ -411,7 +470,9 @@ const EditAboutMe = (props) => {
               <InputGroup.Text>Skill Name </InputGroup.Text>
               <FormControl aria-label="Skill Name " placeholder="" />
             </InputGroup>{" "}
-            <Button variant="success">Done</Button>
+            <Button variant="success" id="delete" onClick={handleSubmitClick}>
+              Done
+            </Button>
           </>
         ) : null}
       </div>
