@@ -2,13 +2,15 @@ import { React, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LogoutButton from "../../../components/buttons/LogoutButton";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import * as authenticationActions from "../../../stores/authentication/actions/Authentication";
+import Admin from "./Admin";
 
 // STYLE
 import "../style/login.css";
 
 const Login = (props) => {
+  const token = useSelector((state) => state.authentication.token);
   const dispatch = useDispatch();
   // this state holds user input
   const [loginData, setLoginData] = useState({
@@ -54,47 +56,54 @@ const Login = (props) => {
     if (responseData.accessToken === "invalid") {
       return dispatch(authenticationActions.loginFailed());
     }
-    dispatch(authenticationActions.loginAdmin(responseData.accessToken));
+    localStorage.token = responseData.accessToken;
+    dispatch(authenticationActions.loginAdmin(localStorage.token));
   };
 
   return (
-    <div className="login-form-container">
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <h1>Login as admin</h1>
-          <Form.Label>Username</Form.Label>
+    <>
+      {token !== "" && token !== "invalid" &&token!==null ? (
+        <Admin />
+      ) : (
+        <div className="login-form-container">
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <h1>Login as admin</h1>
+              <Form.Label>Username</Form.Label>
 
-          <Form.Control
-            type="text"
-            placeholder="Enter username"
-            onChange={handleUserInput}
-            id="form-username"
-            value={loginData.username}
-          />
-        </Form.Group>
+              <Form.Control
+                type="text"
+                placeholder="Enter username"
+                onChange={handleUserInput}
+                id="form-username"
+                value={loginData.username}
+              />
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
 
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={handleUserInput}
-            id="form-password"
-            value={loginData.password}
-          />
-        </Form.Group>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                onChange={handleUserInput}
+                id="form-password"
+                value={loginData.password}
+              />
+            </Form.Group>
 
-        <Link
-          to="/admin"
-          onClick={() => {
-            handleLoginState(loginData.username, loginData.password);
-          }}
-        >
-          <Button variant="primary">Submit</Button>
-        </Link>
-      </Form>
-    </div>
+            <Link
+              to="/admin"
+              onClick={() => {
+                handleLoginState(loginData.username, loginData.password);
+              }}
+            >
+              <Button variant="primary">Submit</Button>
+            </Link>
+          </Form>
+        </div>
+      )}
+    </>
   );
 };
 

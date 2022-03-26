@@ -11,7 +11,7 @@ const Admin = () => {
   const isLoggedIn = useSelector((state) => state.authentication);
   return (
     <div className="admin-container">
-      {isLoggedIn.token === "" ? (
+      {isLoggedIn.token === "" || isLoggedIn.token === null ? (
         <Loader />
       ) : isLoggedIn.token === "invalid" ? (
         <LoginFailed />

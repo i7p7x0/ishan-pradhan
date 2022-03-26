@@ -14,11 +14,11 @@ router
   .route("/properties")
   .get(aboutController.getProperties)
   // .post(aboutController.addProperty)
-  .patch(authenticateToken,aboutController.updateProperty);
+  .patch(authenticateToken, aboutController.updateProperty);
 //----------------- skill-routes -----------------//
 router
   .route("/skills")
   .get(aboutController.getSkill)
-  .post(aboutController.addSkill)
-  .delete(aboutController.deleteSkill);
+  .post(authenticateToken, aboutController.addSkill)
+  .delete(authenticateToken, aboutController.deleteSkill);
 module.exports = router;

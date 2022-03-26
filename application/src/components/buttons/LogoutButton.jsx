@@ -9,7 +9,9 @@ import "./style/logout-button.css";
 
 const LogoutButton = () => {
   const dispatch = useDispatch();
+
   const handleLogout = () => {
+    localStorage.removeItem("token");
     dispatch(authenticationActions.LOGOUT_ADMIN);
   };
 
