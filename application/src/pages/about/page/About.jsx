@@ -38,7 +38,7 @@ const About = () => {
       </div>
       {/* about my properties */}
       <div className="about-container-child about-child-about-my-properties-container">
-        <AboutMyProperties properties={MY_PROPERTIES} /><hr className="mobile-only"/>
+        <AboutMyProperties/><hr className="mobile-only"/>
       </div>
       {/* about my can dos */}
       <div className="about-container-child about-child-about-my-can-dos-container">

@@ -27,7 +27,7 @@ const UserCardStatic = () => {
             </span>
             <br />
             <span className="user-card-static-title-title">
-              Web | Mobile | Database
+              Web | Mobile | ETL
             </span>
             <br />
 
@@ -42,7 +42,7 @@ const UserCardStatic = () => {
             <div className="user-card-static-icons-container">
               <AiFillSkype />{" "}
               <span className="user-card-static-title-title">
-                live:.cid.344ea10c532e81d8
+                live:ishan.pradhan_2
               </span>
             </div>
             <div className="user-card-static-icons-container">

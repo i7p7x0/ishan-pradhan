@@ -5,7 +5,7 @@ import {
 } from "../actions/Authentication";
 
 const initialState = {
-  token: "",
+  token: localStorage.getItem("token"),
 };
 
 export const authenticationReducer = (state = initialState, action) => {
