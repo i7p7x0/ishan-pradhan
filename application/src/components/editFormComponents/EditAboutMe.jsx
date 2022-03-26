@@ -6,12 +6,14 @@ import {
   FormControl,
   InputGroup,
 } from "react-bootstrap";
+import { useSelector } from "react-redux";
 // STYLE
 import "./styles/edit-about-me.css";
 // DATA
 import parentSkills from "../../data/PARENTSKILLS";
 
 const EditAboutMe = (props) => {
+  const token = useSelector((state) => state.authentication.token);
   const [loaded, setLoaded] = useState({ properties: false });
   const [bio, setBio] = useState("");
   const [properties, setProperties] = useState({
@@ -143,7 +145,7 @@ const EditAboutMe = (props) => {
       case "submitBio":
         const bioResponse = await fetch("http://localhost:5000/about/bio", {
           method: "PATCH",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", authorization: token },
           body: JSON.stringify({
             content: bio,
           }),
@@ -160,7 +162,10 @@ const EditAboutMe = (props) => {
           "http://localhost:5000/about/properties",
           {
             method: "PATCH",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
             body: JSON.stringify({
               age: properties.age,
               address: properties.address,
@@ -183,7 +188,10 @@ const EditAboutMe = (props) => {
           "http://localhost:5000/about/skills",
           {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
             body: JSON.stringify({
               skillType: skillSet.skillParent,
               skillName: skillSet.skillChild,

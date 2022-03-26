@@ -51,7 +51,7 @@ const Message = () => {
   const handleMarkMessageAsRead = async (id) => {
     await fetch("http://localhost:5000/contact/", {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",headers: { authorization: token } },
       body: JSON.stringify({ id: id }),
     });
 

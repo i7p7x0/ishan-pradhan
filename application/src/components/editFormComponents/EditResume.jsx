@@ -1,9 +1,11 @@
 import { React, useState, useEffect } from "react";
 import { Button, Form, InputGroup, FormControl } from "react-bootstrap";
+import { useSelector } from "react-redux";
 // STYLE
 import "./styles/edit-resume.css";
 
 const EditResume = (props) => {
+  const token = useSelector((state) => state.authentication.token);
   const [educationCycle, setEducationCycle] = useState(1);
   const [experienceCycle, setExperienceCycle] = useState(1);
   const [isLoaded, setLoaded] = useState({
@@ -79,7 +81,10 @@ const EditResume = (props) => {
           "http://localhost:5000/education",
           {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
             body: JSON.stringify({
               degreeName: newEducation.degreeName,
               university: newEducation.university,
@@ -103,7 +108,10 @@ const EditResume = (props) => {
           "http://localhost:5000/education",
           {
             method: "DELETE",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
             body: JSON.stringify({
               id: toBeDeleted,
             }),
@@ -124,7 +132,10 @@ const EditResume = (props) => {
           "http://localhost:5000/experience",
           {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
             body: JSON.stringify({
               title: newExperience.title,
               employer: newExperience.employer,
@@ -150,7 +161,10 @@ const EditResume = (props) => {
           "http://localhost:5000/experience",
           {
             method: "DELETE",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
             body: JSON.stringify({
               id: experienceToBeDeleted,
             }),
@@ -171,7 +185,10 @@ const EditResume = (props) => {
           "http://localhost:5000/experience",
           {
             method: "PATCH",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              authorization: token,
+            },
             body: JSON.stringify({
               id: experienceToBeUpdated,
               to: endDate,
@@ -557,7 +574,7 @@ const EditResume = (props) => {
                 {" "}
                 <h2>Update existing experience record</h2>
                 <Form.Select
-                defaultValue={"DEFAULT"}
+                  defaultValue={"DEFAULT"}
                   className="edit-resume-select"
                   aria-label="Default select example"
                   onChange={(event) => {

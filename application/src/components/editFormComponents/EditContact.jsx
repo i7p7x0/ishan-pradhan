@@ -1,9 +1,11 @@
 import { React, useState, useEffect } from "react";
 import { Button, Form, InputGroup, FormControl } from "react-bootstrap";
+import { useSelector } from "react-redux";
 // STYLE
 import "./styles/edit-contact.css";
 
 const EditContact = (props) => {
+  const token = useSelector((state) => state.authentication.token);
   const [isLoaded, setLoaded] = useState({
     contact: false,
   });
@@ -43,7 +45,10 @@ const EditContact = (props) => {
       "http://localhost:5000/contact/contactDetails",
       {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          authorization: token,
+        },
         body: JSON.stringify({
           phoneNumber: contact.phoneNumber,
           emailAddress: contact.emailAddress,
@@ -140,7 +145,7 @@ const EditContact = (props) => {
               }}
             />
             <Form.Check
-              checked={contact.rectuitment ? true : false}
+              checked={contact.recruitment ? true : false}
               type="switch"
               label="Available for Recruitment"
               id="disabled-custom-switch"

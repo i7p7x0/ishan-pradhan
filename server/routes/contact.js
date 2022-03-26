@@ -9,12 +9,12 @@ router
   .route("/")
   .get(authenticateToken, contactController.getMessages)
   .post(contactController.postMessages)
-  .delete(contactController.deleteMessages);
+  .delete(authenticateToken,contactController.deleteMessages);
 
 //----------------- contact-details-routes -----------------//
 router
   .route("/contactDetails/")
   .get(contactController.getContact)
   // .post(contactController.addContact)
-  .patch(contactController.updateContact);
+  .patch(authenticateToken,contactController.updateContact);
 module.exports = router;
