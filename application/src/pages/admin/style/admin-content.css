@@ -20,6 +20,23 @@ i. center page content
 ii.center page items
 iii.set page background color
 ***************************************/
+.negate {
+  margin-top: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-content-container {
+  display: none;
+}
+
 @media screen and (min-width: 1024px) {
   .admin-content-container {
     display: -ms-grid;
@@ -27,6 +44,9 @@ iii.set page background color
     height: 100vh;
     overflow: scroll;
     padding: 2%;
+  }
+  .negate {
+    display: none;
   }
   .admin-button {
     margin: 2%;

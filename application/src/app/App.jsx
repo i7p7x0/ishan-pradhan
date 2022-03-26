@@ -22,7 +22,6 @@ import "../app/style/app.css";
 
 const App = () => {
   const isAuthenticated = localStorage.getItem("token");
-  console.log(isAuthenticated);
 
   const rootReducer = combineReducers({
     navigationIndicator: navigationIndicatorReducer,

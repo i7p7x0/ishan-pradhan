@@ -1,11 +1,26 @@
 @import "../../../style/root";
 
+.negate {
+  margin-top: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-content-container {
+  display: none;
+}
+
 @media screen and(min-width:$min-width-laptop) {
   .admin-content-container {
     display: grid;
     height: 100vh;
     overflow: scroll;
     padding: 2%;
+  }
+
+  .negate {
+    display: none;
   }
 
   .admin-button {

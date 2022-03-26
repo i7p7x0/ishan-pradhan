@@ -47,7 +47,7 @@ const categories = [
         subCategory: "Education",
         changeType: [
           { id: "2ed1", changeType: "add" },
-          { id: "2ed2", changeType: "update" },
+
           { id: "2ed3", changeType: "delete" },
         ],
       },

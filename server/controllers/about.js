@@ -1,41 +1,78 @@
 const Bio = require("../models/Bio");
 const Property = require("../models/Property");
 const Skill = require("../models/Skill");
-const ERROR = require("../data/Error");
+
+const Validations = require("../utils/validateInput");
+// errors
+const fatalError = require("../constants/errors/FatalError");
+const inputError = require("../constants/errors/InputError");
+const noError = require("../constants/errors/NoError");
 //----------------- get bio -----------------//
 exports.getBio = async (req, res, next) => {
-  const bio = await Bio.find();
-  res.json(bio);
+  let bio;
+  try {
+    bio = await Bio.find();
+  } catch (error) {
+    return res.json(fatalError);
+  }
+  return res.json(bio);
 };
 //----------------- post bio -----------------//
-exports.addBio = async (req, res, next) => {
-  const bio = new bio({
-    bio: "bio",
-    content: req.body.content,
-  });
+// exports.addBio = async (req, res, next) => {
+//   const bio = new Bio({
+//     bio: "bio",
+//     content: req.body.content,
+//   });
+//   try {
+//     if (!Validations.validateBio(bio)) {
+//       throw new Error("error");
+//     }
+//   } catch (error) {
+//     return res.json(inputError);
+//   }
+//   try {
+//     await bio.save();
+//   } catch (error) {
+//     return res.json(fatalError);
+//   }
 
-  await contact.save();
-  return res.send("saved");
-};
+//   return res.json(noError);
+// };
 //----------------- patch bio -----------------//
-exports.updateBio = (req, res, next) => {
+exports.updateBio = async (req, res, next) => {
   const newBio = new Bio({
     content: req.body.content,
   });
+  try {
+    if (!Validations.validateBio(newBio)) {
+      throw new Error("error");
+    }
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await Bio.updateOne(
+      { bio: "bio" },
+      {
+        content: newBio.content,
+      }
+    );
+  } catch (error) {
+    return res.json(fatalError);
+  }
 
-  Contact.updateOne(
-    { bio: "bio" },
-    {
-      content: newBio.content,
-    },
-    (err) => {}
-  );
-  return res.send("updated");
+  return res.json(noError);
 };
 //----------------- get properties -----------------//
 exports.getProperties = async (req, res, next) => {
-  const property = await Property.find();
-  res.json(property);
+  let property;
+  try {
+    property = await Property.find();
+  } catch (error) {
+    return res.json(fatalError);
+  }
+
+  return res.json(property);
 };
 //----------------- post property -----------------//
 exports.addProperty = async (req, res, next) => {
@@ -48,11 +85,22 @@ exports.addProperty = async (req, res, next) => {
     phoneNumber: req.body.phoneNumber,
     experience: req.body.experience,
   });
+  try {
+    if (!Validations.validateProperties(property)) {
+      throw new Error("error");
+    }
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await property.save();
+  } catch (error) {
+    return res.json(fatalError);
+  }
 
-  await property.save();
-  return res.send("saved");
+  return res.json(noError);
 };
-//----------------- patch bio -----------------//
+//----------------- patch property -----------------//
 exports.updateProperty = async (req, res, next) => {
   const newProperty = new Property({
     age: req.body.age,
@@ -62,24 +110,39 @@ exports.updateProperty = async (req, res, next) => {
     phoneNumber: req.body.phoneNumber,
     experience: req.body.experience,
   });
-
-  await Contact.updateOne(
-    { property: "property" },
-    {
-      age: newProperty.age,
-      residence: newProperty.residence,
-      emailAddress: newProperty.emailAddress,
-      address: newProperty.address,
-      phoneNumber: newProperty.phoneNumber,
-      experience: newPropertyy.experience,
+  try {
+    if (!Validations.validateProperties(newProperty)) {
+      throw new Error("error");
     }
-  );
-  return res.send("updated");
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await Property.updateOne(
+      { property: "property" },
+      {
+        age: newProperty.age,
+        residence: newProperty.residence,
+        emailAddress: newProperty.emailAddress,
+        address: newProperty.address,
+        phoneNumber: newProperty.phoneNumber,
+        experience: newProperty.experience,
+      }
+    );
+  } catch (error) {
+    return res.json(fatalError);
+  }
+  return res.json(noError);
 };
 //----------------- get skill -----------------//
 exports.getSkill = async (req, res, next) => {
-  const skill = await Skill.find();
-  res.json(skill);
+  let skill;
+  try {
+    skill = await Skill.find();
+  } catch (error) {
+    return res.json(fatalError);
+  }
+  return res.json(skill);
 };
 //----------------- post skill -----------------//
 exports.addSkill = async (req, res, next) => {
@@ -87,13 +150,34 @@ exports.addSkill = async (req, res, next) => {
     skillType: req.body.skillType,
     skillName: req.body.skillName,
   });
+  try {
+    if (!Validations.validateSkill(skill)) {
+      throw new Error("error");
+    }
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await skill.save();
+  } catch (error) {
+    return res.json(fatalError);
+  }
 
-  await skill.save();
-  return res.send("saved");
+  return res.json(noError);
 };
 //----------------- delete skill -----------------//
 exports.deleteSkill = async (req, res, next) => {
   const id = req.body.id;
-  await Skill.deleteOne({ _id: id });
-  return res.send("deleted");
+  try {
+    if (id === undefined) throw new Error("Error");
+  } catch (error) {
+    return res.json(inputError);
+  }
+  try {
+    await Skill.deleteOne({ _id: id });
+  } catch (error) {
+    return res.json(fatalError);
+  }
+
+  return res.json(noError);
 };

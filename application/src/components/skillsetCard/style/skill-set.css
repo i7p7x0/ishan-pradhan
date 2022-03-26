@@ -41,4 +41,10 @@ iii.set page background color
   font-weight: bolder;
   color: #b8405e;
 }
+
+.skill-li {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #374045;
+}
 /*# sourceMappingURL=skill-set.css.map */

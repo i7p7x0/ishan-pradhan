@@ -185,16 +185,22 @@ const ContactForm = () => {
         userInput.subject,
         userInput.message
       );
-      // await fetch("http://localhost:5000/contact/", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "Application/Json" },
-      //   body: JSON.stringify({
-      //     name: userInput.fullName,
-      //     emailAddress: userInput.emailAddress,
-      //     subject: userInput.subject,
-      //     message: userInput.message,
-      //   }),
-      // });
+      const response = await fetch("http://localhost:5000/contact/", {
+        method: "POST",
+        headers: { "Content-Type": "Application/Json" },
+        body: JSON.stringify({
+          name: userInput.fullName,
+          emailAddress: userInput.emailAddress,
+          subject: userInput.subject,
+          message: userInput.message,
+        }),
+      });
+      const responseData = await response.json();
+      if (responseData.error) {
+        alert(responseData.errorMessage);
+      } else if (!responseData.error) {
+        alert("Updated successfully");
+      }
     }
   };
 
