@@ -2,10 +2,9 @@ import { React, useState, useEffect } from "react";
 
 // CUSTOM COMPONENTS
 import ContactCard from "./components/ContactCard";
-import { constContactType } from "../../constants/constContactType";
+
 import ContactForm from "./components/ContactForm";
 // DATA
-import myContactTypes from "../../data/myContactTypes";
 
 // STYLE
 import "./style/contact.css";

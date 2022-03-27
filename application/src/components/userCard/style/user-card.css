@@ -99,4 +99,9 @@ iii.set page background color
   display: block;
   text-align: center;
 }
+
+.anchor-card-dynamic {
+  text-decoration: none;
+  color: #ffffff;
+}
 /*# sourceMappingURL=user-card.css.map */

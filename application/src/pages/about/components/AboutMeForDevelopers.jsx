@@ -4,7 +4,7 @@ import Loader from "../../../components/loader/Loader";
 import SkillSet from "../../../components/skillsetCard/SkillSet";
 
 // DATA
-import mySkillset from "../../../data/mySkillset";
+
 
 // STYLE
 

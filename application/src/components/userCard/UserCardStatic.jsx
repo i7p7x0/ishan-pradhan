@@ -35,10 +35,28 @@ const UserCardStatic = () => {
             <br />
 
             <div className="user-card-static-icons-container">
-              <AiFillLinkedin />
-              <AiFillGithub />
-              <AiFillInstagram />
-              <FaDiscord />
+              <a
+                className="card-anchor"
+                href="https://www.linkedin.com/in/ishan-pradhan/"
+                target="_blank"
+              >
+                <AiFillLinkedin />
+              </a>
+              <a
+                className="card-anchor"
+                href="https://github.com/i7p7x0"
+                target="_blank"
+              >
+                <AiFillGithub />
+              </a>
+
+              <a
+                className="card-anchor"
+                href="https://discord.com/users/i7p7x0#0503"
+                target="_blank"
+              >
+                <FaDiscord />
+              </a>
             </div>
 
             <hr />

@@ -76,6 +76,11 @@ iii.set page background color
   margin-top: 5%;
 }
 
+.card-anchor {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 @media screen and (max-width: 1024px) {
   .user-card-static-container {
     display: none;

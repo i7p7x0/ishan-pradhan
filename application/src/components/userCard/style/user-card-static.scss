@@ -40,6 +40,11 @@
   margin-top: 5%;
 }
 
+.card-anchor {
+  text-decoration: none;
+  color: $font-color-light-primary;
+}
+
 @media screen and (max-width: $min-width-laptop) {
   .user-card-static-container {
     display: none;
