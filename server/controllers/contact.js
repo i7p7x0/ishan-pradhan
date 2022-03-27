@@ -95,7 +95,7 @@ exports.updateContact = async (req, res, next) => {
     freelance: req.body.freelance,
     recruitment: req.body.recruitment,
   });
-  console.log(Validations.validateContact(newContact));
+ 
   try {
     if (!Validations.validateContact(newContact)) {
       throw new Error("Error");

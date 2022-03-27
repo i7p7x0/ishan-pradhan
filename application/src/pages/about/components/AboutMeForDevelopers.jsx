@@ -5,7 +5,6 @@ import SkillSet from "../../../components/skillsetCard/SkillSet";
 
 // DATA
 
-
 // STYLE
 
 import "../style/about-me-for-developers.css";
