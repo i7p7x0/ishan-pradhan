@@ -14,6 +14,7 @@ import {
 import { FaBookReader, FaUserCircle, FaDiscord } from "react-icons/fa";
 import { constPageComponents } from "../../constants/constPageComponents";
 import * as navigationIndicatorActions from "../../stores/navigationIndicator/actions/NavigationIndicator";
+import face from "../../images/face.jpg";
 
 //STYLE
 import "./style/user-card.css";
@@ -112,7 +113,7 @@ const UserCard = () => {
           </Offcanvas.Header>
           <Offcanvas.Body className="canvas-container canvas-container-body">
             <div className="avatar-container">
-              <div className="avatar-image"></div>
+              <div className="avatar-image"><img src={face}/></div>
               <div className="avatar-title">
                 <h1 className="avatar-name">Ishan Pradhan</h1>
                 <h2 className="avatar-designation">full stack developer</h2>

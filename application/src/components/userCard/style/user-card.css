@@ -53,6 +53,10 @@ iii.set page background color
   width: 250px;
   background-color: red;
   border-radius: 50%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .avatar-name {
