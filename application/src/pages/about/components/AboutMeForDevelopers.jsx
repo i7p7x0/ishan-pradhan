@@ -4,7 +4,6 @@ import Loader from "../../../components/loader/Loader";
 import SkillSet from "../../../components/skillsetCard/SkillSet";
 
 // DATA
-import mySkillset from "../../../data/mySkillset";
 
 // STYLE
 
@@ -32,11 +31,9 @@ const AboutMeForDevelopers = () => {
       {isLoaded ? (
         <div className="about-me-for-developers-container">
           <div className="about-me-for-developers-header-container">
-            <h2 className="about-me-for-developers-header">
-              Hi fellow Developer,
-            </h2>
+            <h2 className="about-me-for-developers-header">Hi Dev</h2>
             <h5 className="about-me-for-developers-header-small">
-              Here is my skillset
+              Here's my skillset.
             </h5>
             <div className="about-me-for-developers-skillset-container">
               {} <SkillSet skillsets={skillSetList} />

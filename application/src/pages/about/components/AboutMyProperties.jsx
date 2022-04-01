@@ -13,6 +13,13 @@ const AboutMyProperties = (props) => {
     age = dt.getFullYear() - 1997 - 1;
   }
 
+  let experience;
+  if (dt.getMonth >= 9 && dt.getDate >= 17) {
+    experience = dt.getFullYear() - 2018;
+  } else {
+    experience = dt.getFullYear() - 2018 - 1;
+  }
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [propertiesList, setPropertiesList] = useState([]);
 
@@ -71,7 +78,7 @@ const AboutMyProperties = (props) => {
               <span className="about-my-properties-key">Experience</span>
               <span className="about-my-properties-colon"> : </span>
               <span className="about-my-properties-value">
-                {property.experience}
+                {experience}+ years - till now
               </span>
             </div>{" "}
           </div>

@@ -82,7 +82,7 @@ export const validateEmail = (email) => {
   };
   // Check if email address is empty
   if (email.length === 0) {
-    let errorMessage = "Eail Address is required*";
+    let errorMessage = "Email Address is required*";
     userEmail.errorMessages.push({ errorMessage: errorMessage });
     userEmail.isValidated = false;
     return userEmail;
@@ -116,7 +116,7 @@ export const validateMessage = (message) => {
   };
   //i. Check if message address is empty
   if (message.length === 0) {
-    let errorMessage = "Name is required*";
+    let errorMessage = "Message is required*";
     userMessage.errorMessages.push({ errorMessage: errorMessage });
     userMessage.isValidated = false;
     return userMessage;

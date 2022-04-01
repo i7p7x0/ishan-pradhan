@@ -9,8 +9,6 @@ const EditOption = (props) => {
     props.handleSelectEdit(selected, selectedIndicator);
   };
 
-  console.log(props.categories);
-
   return (
     <div className="edit-option-container">
       <Form.Select

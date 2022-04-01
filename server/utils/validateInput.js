@@ -155,7 +155,6 @@ const validateExperience = (experience) => {
 };
 
 const validateBio = (bio) => {
-  console.log(bio.content);
   if (bio.content === undefined) {
     return false;
   }

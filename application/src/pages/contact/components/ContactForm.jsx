@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Modal } from "react-bootstrap";
 
 // CUSTOM COMPONENTS
 import postMessage from "../../../requests/post/postMessage";
@@ -23,6 +23,10 @@ const ContactForm = () => {
     subject: "",
     message: "",
   });
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   // this method stores user inputs to the user input state
   const handleUserInput = (event) => {
@@ -185,27 +189,55 @@ const ContactForm = () => {
         userInput.subject,
         userInput.message
       );
-      const response = await fetch("http://localhost:5000/contact/", {
-        method: "POST",
-        headers: { "Content-Type": "Application/Json" },
-        body: JSON.stringify({
-          name: userInput.fullName,
-          emailAddress: userInput.emailAddress,
-          subject: userInput.subject,
-          message: userInput.message,
-        }),
-      });
-      const responseData = await response.json();
-      if (responseData.error) {
-        alert(responseData.errorMessage);
-      } else if (!responseData.error) {
-        alert("Updated successfully");
+      try {
+        const response = await fetch("http://localhost:5000/contact/", {
+          method: "POST",
+          headers: { "Content-Type": "Application/Json" },
+          body: JSON.stringify({
+            name: userInput.fullName,
+            emailAddress: userInput.emailAddress,
+            subject: userInput.subject,
+            message: userInput.message,
+          }),
+        });
+        const responseData = await response.json();
+        if (responseData.error) {
+          alert(responseData.errorMessage);
+        } else if (!responseData.error) {
+          setShow(!show);
+        }
+      } catch {
+        alert("An error occured, please try again later");
       }
     }
   };
 
   return (
     <div className="contact-form-container">
+      <>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Success</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Your message has been sent successfully</Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="success"
+              onClick={() => {
+                handleClose();
+                setUserInput({
+                  fullName: "",
+                  emailAddress: "",
+                  subject: "",
+                  message: "",
+                });
+              }}
+            >
+              Okay
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
       <div className="contact-form-header-container">
         <h2 className="contact-form-header">How can I help you?</h2>
       </div>

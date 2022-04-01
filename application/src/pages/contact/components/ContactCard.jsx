@@ -24,7 +24,7 @@ const ContactCard = (props) => {
                 </span>
               </div>
             </div>
-            <div className="contact-card-container" key={contactType._id}>
+            <div className="contact-card-container">
               <div className="contact-card-body">
                 <FaMailBulk className="contact-card-icon" />
               </div>
@@ -34,7 +34,7 @@ const ContactCard = (props) => {
                 </span>
               </div>
             </div>
-            <div className="contact-card-container" key={contactType._id}>
+            <div className="contact-card-container">
               <div className="contact-card-body">
                 <HiLocationMarker className="contact-card-icon" />
               </div>
@@ -44,7 +44,7 @@ const ContactCard = (props) => {
                 </span>
               </div>
             </div>
-            <div className="contact-card-container" key={contactType._id}>
+            <div className="contact-card-container">
               <div className="contact-card-body">
                 {contactType.freelance ? (
                   <FaCheckCircle className="contact-card-icon contact-card-icon-true" />
