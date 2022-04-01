@@ -118,7 +118,7 @@ const UserCard = () => {
               </div>
               <div className="avatar-title">
                 <h1 className="avatar-name">Ishan Pradhan</h1>
-                <h2 className="avatar-designation">full stack developer</h2>
+                <h2 className="avatar-designation">Full-Stack developer</h2>
                 <hr />
               </div>
             </div>
@@ -231,17 +231,6 @@ const UserCard = () => {
                   <FaDiscord className="nav-item-icon" />
                 </a>
               </span>
-
-              <Link
-                className="nav-link"
-                to="#action2"
-                onClick={handleDrawerState}
-              >
-                <span className="nav-link-content">
-                  <AiOutlineDownload className="nav-item-icon" />
-                  Download CV
-                </span>
-              </Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

@@ -93,12 +93,6 @@ const Header = () => {
             )
           }
         </NavLink>
-        <div className="header-pc-button-static">
-          <div className="header-pc-icon">
-            <AiOutlineDownload />
-          </div>
-          <div className="header-pc-text">Download CV</div>
-        </div>
       </div>
     </div>
   );
