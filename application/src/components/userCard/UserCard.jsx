@@ -11,10 +11,11 @@ import {
   AiFillInstagram,
   AiOutlineDownload,
 } from "react-icons/ai";
-import { FaBookReader, FaUserCircle, FaDiscord } from "react-icons/fa";
+import { FaBookReader, FaUserCircle, FaDiscord,FaUserSecret } from "react-icons/fa";
 import { constPageComponents } from "../../constants/constPageComponents";
 import * as navigationIndicatorActions from "../../stores/navigationIndicator/actions/NavigationIndicator";
-import face from "../../images/face.jpg";
+import face from "../../images/ishan.jpg"
+
 
 //STYLE
 import "./style/user-card.css";
@@ -114,7 +115,7 @@ const UserCard = () => {
           <Offcanvas.Body className="canvas-container canvas-container-body">
             <div className="avatar-container">
               <div className="avatar-image">
-                <img src={face} />
+               <img src={face}/>
               </div>
               <div className="avatar-title">
                 <h1 className="avatar-name">Ishan Pradhan</h1>

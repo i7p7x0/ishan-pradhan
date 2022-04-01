@@ -23,7 +23,7 @@ const Message = () => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/contact/", {
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/contact/", {
         headers: { authorization: token },
       });
       const responseData = await response.json();
@@ -49,7 +49,7 @@ const Message = () => {
 
   // this deletes message and changes fetch cycle to send fetch request again
   const handleMarkMessageAsRead = async (id) => {
-    await fetch("http://localhost:5000/contact/", {
+    await fetch(process.env.REACT_APP_BACKEND_URL+"/contact/", {
       method: "DELETE",
       headers: { "Content-Type": "application/json", authorization: token },
       body: JSON.stringify({ id: id }),

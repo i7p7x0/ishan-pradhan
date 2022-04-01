@@ -44,7 +44,7 @@ const Login = (props) => {
   // this method sends login request to server after clicking submit button
   const handleLoginState = async (username, password) => {
     dispatch(authenticationActions.logoutAdmin());
-    const response = await fetch("http://localhost:5000/login/", {
+    const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/login/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

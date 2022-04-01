@@ -21,7 +21,7 @@ const EditContact = (props) => {
     let mounted = true;
     const sendRequest = async () => {
       const response = await fetch(
-        "http://localhost:5000/contact/contactDetails"
+        process.env.REACT_APP_BACKEND_URL+"/contact/contactDetails"
       );
       const responseData = await response.json();
       if (mounted) {
@@ -41,7 +41,7 @@ const EditContact = (props) => {
 
   const handleFormSubmit = async () => {
     const contactResponse = await fetch(
-      "http://localhost:5000/contact/contactDetails",
+      process.env.REACT_APP_BACKEND_URL+"/contact/contactDetails",
       {
         method: "PATCH",
         headers: {

@@ -11,7 +11,7 @@ const AboutMe = () => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/about/bio");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/about/bio");
       const responseData = await response.json();
       if (mounted) {
         setBio(responseData);

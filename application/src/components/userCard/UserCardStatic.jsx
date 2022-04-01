@@ -9,8 +9,9 @@ import {
 import { FaDiscord } from "react-icons/fa";
 // CUSTOM COMPONENTS
 import AdminButton from "../buttons/AdminButton";
+import face from "../../images/ishan.jpg"
 // STYLE
-import face from "../../images/face.jpg";
+
 
 import "./style/user-card-static.css";
 
@@ -20,7 +21,7 @@ const UserCardStatic = () => {
       <Offcanvas.Body>
         <div className="avatar-container">
           <div className="static-avatar-image">
-            <img src={face} />
+          <img src={face}/>
           </div>
           <div className="user-card-static-title-container">
             <span className="user-card-static-title-name">Ishan Pradhan</span>

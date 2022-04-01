@@ -10,7 +10,7 @@ const ResumeEducation = () => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/education");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/education");
       const responseData = await response.json();
       if (mounted) {
         setEducationList(responseData);

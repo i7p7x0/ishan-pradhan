@@ -24,8 +24,11 @@
   width: 250px;
   background-color: red;
   border-radius: 50%;
-  overflow: hidden;
+  margin-bottom: 15%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .avatar-name {

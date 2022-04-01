@@ -11,7 +11,7 @@ const ResumeExperience = () => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/experience");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/experience");
       const responseData = await response.json();
       if (mounted) {
         setExperienceList(responseData);

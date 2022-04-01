@@ -44,7 +44,7 @@ const EditResume = (props) => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/education");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/education");
       const responseData = await response.json();
       if (mounted) {
         setEducation(responseData);
@@ -60,7 +60,7 @@ const EditResume = (props) => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/experience");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/experience");
       const responseData = await response.json();
       if (mounted) {
         setExperience(responseData);
@@ -78,7 +78,7 @@ const EditResume = (props) => {
     switch (selected) {
       case "addNewExperience":
         const addEducationResponse = await fetch(
-          "http://localhost:5000/education",
+          process.env.REACT_APP_BACKEND_URL+"/education",
           {
             method: "POST",
             headers: {
@@ -105,7 +105,7 @@ const EditResume = (props) => {
         break;
       case "deleteEducation":
         const deleteEducationResponse = await fetch(
-          "http://localhost:5000/education",
+          process.env.REACT_APP_BACKEND_URL+"/education",
           {
             method: "DELETE",
             headers: {
@@ -129,7 +129,7 @@ const EditResume = (props) => {
         break;
       case "addExperience":
         const addExperienceResponse = await fetch(
-          "http://localhost:5000/experience",
+          process.env.REACT_APP_BACKEND_URL+"/experience",
           {
             method: "POST",
             headers: {
@@ -158,7 +158,7 @@ const EditResume = (props) => {
         break;
       case "deleteExperience":
         const deleteExperienceResponse = await fetch(
-          "http://localhost:5000/experience",
+          process.env.REACT_APP_BACKEND_URL+"/experience",
           {
             method: "DELETE",
             headers: {
@@ -182,7 +182,7 @@ const EditResume = (props) => {
         break;
       case "updateExperience":
         const updateExperienceResponse = await fetch(
-          "http://localhost:5000/experience",
+          process.env.REACT_APP_BACKEND_URL+"/experience",
           {
             method: "PATCH",
             headers: {

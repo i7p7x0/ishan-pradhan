@@ -34,7 +34,7 @@ const EditAboutMe = (props) => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/about/properties");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/about/properties");
       const responseData = await response.json();
       if (mounted) {
         setProperties({
@@ -143,7 +143,7 @@ const EditAboutMe = (props) => {
     let submitType = event.target.id;
     switch (submitType) {
       case "submitBio":
-        const bioResponse = await fetch("http://localhost:5000/about/bio", {
+        const bioResponse = await fetch(process.env.REACT_APP_BACKEND_URL+"/about/bio", {
           method: "PATCH",
           headers: { "Content-Type": "application/json", authorization: token },
           body: JSON.stringify({
@@ -159,7 +159,7 @@ const EditAboutMe = (props) => {
         break;
       case "submitProperties":
         const propertiesResponse = await fetch(
-          "http://localhost:5000/about/properties",
+          process.env.REACT_APP_BACKEND_URL+"/about/properties",
           {
             method: "PATCH",
             headers: {
@@ -185,7 +185,7 @@ const EditAboutMe = (props) => {
         break;
       case "addSkillSet":
         const skillsResponse = await fetch(
-          "http://localhost:5000/about/skills",
+          process.env.REACT_APP_BACKEND_URL+"/about/skills",
           {
             method: "POST",
             headers: {

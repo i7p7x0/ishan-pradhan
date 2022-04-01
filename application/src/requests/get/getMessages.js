@@ -2,7 +2,7 @@ const getMessages = () => {
 
     let mounted=true;
     const sendRequest = async () => {
-        const response = await fetch ("http://localhost:5000/contact/");
+        const response = await fetch (process.env.REACT_APP_BACKEND_URL+"/contact/");
         const responseData =await response.json();
         if(mounted){
 

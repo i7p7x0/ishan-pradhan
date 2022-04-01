@@ -26,7 +26,7 @@ const AboutMyProperties = (props) => {
   useEffect(() => {
     let mounted = true;
     const sendRequest = async () => {
-      const response = await fetch("http://localhost:5000/about/properties");
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+"/about/properties");
       const responseData = await response.json();
       if (mounted) {
         setPropertiesList(responseData);

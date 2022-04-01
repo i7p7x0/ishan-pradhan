@@ -1,5 +1,5 @@
 const postMessage = async (name, emailAddress, subject, message) => {
-  await fetch("http://localhost:5000/contact/", {
+  await fetch(process.env.REACT_APP_BACKEND_URL+"/contact/", {
     method: "POST",
     headers: { "Content-Type": "Application/Json" },
     body: JSON.stringify({
