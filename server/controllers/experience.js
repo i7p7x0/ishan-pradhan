@@ -59,7 +59,7 @@ exports.addExperience = async (req, res, next) => {
 //----------------- delete experience -----------------//
 exports.deleteExperience = async (req, res, next) => {
   const id = req.body.id;
-  console.log(id);
+  
   try {
     if (id === undefined) {
       throw new Error("Error");

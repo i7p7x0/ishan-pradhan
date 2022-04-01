@@ -32,7 +32,7 @@ const SkillSet = (props) => {
                 )
                 .map((skill) => {
                   return (
-                    <li className="skill-li" key={skill.id}>
+                    <li className="skill-li" key={skill._id}>
                       {skill.skillName}
                     </li>
                   );
@@ -55,7 +55,7 @@ const SkillSet = (props) => {
                 )
                 .map((skill) => {
                   return (
-                    <li className="skill-li" key={skill.id}>
+                    <li className="skill-li" key={skill._id}>
                       {skill.skillName}
                     </li>
                   );
@@ -78,7 +78,7 @@ const SkillSet = (props) => {
                 )
                 .map((skill) => {
                   return (
-                    <li className="skill-li" key={skill.id}>
+                    <li className="skill-li" key={skill._id}>
                       {skill.skillName}
                     </li>
                   );
@@ -101,7 +101,7 @@ const SkillSet = (props) => {
                 )
                 .map((skill) => {
                   return (
-                    <li className="skill-li" key={skill.id}>
+                    <li className="skill-li" key={skill._id}>
                       {skill.skillName}
                     </li>
                   );
@@ -124,7 +124,7 @@ const SkillSet = (props) => {
                 )
                 .map((skill) => {
                   return (
-                    <li className="skill-li" key={skill.id}>
+                    <li className="skill-li" key={skill._id}>
                       {skill.skillName}
                     </li>
                   );

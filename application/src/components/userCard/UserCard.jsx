@@ -14,6 +14,7 @@ import {
 import { FaBookReader, FaUserCircle, FaDiscord } from "react-icons/fa";
 import { constPageComponents } from "../../constants/constPageComponents";
 import * as navigationIndicatorActions from "../../stores/navigationIndicator/actions/NavigationIndicator";
+import face from "../../images/face.jpg";
 
 //STYLE
 import "./style/user-card.css";
@@ -112,10 +113,12 @@ const UserCard = () => {
           </Offcanvas.Header>
           <Offcanvas.Body className="canvas-container canvas-container-body">
             <div className="avatar-container">
-              <div className="avatar-image"></div>
+              <div className="avatar-image">
+                <img src={face} />
+              </div>
               <div className="avatar-title">
                 <h1 className="avatar-name">Ishan Pradhan</h1>
-                <h2 className="avatar-designation">full stack developer</h2>
+                <h2 className="avatar-designation">Full-Stack developer</h2>
                 <hr />
               </div>
             </div>
@@ -204,28 +207,30 @@ const UserCard = () => {
                   Contact
                 </span>
               </Link>
-              <Link
-                className="nav-link"
-                to="#action2"
-                onClick={handleDrawerState}
-              >
-                <span className="nav-link-content nav-link-icons-only">
+
+              <span className="nav-link-content nav-link-icons-only">
+                <a
+                  href="https://www.linkedin.com/in/ishan-pradhan/"
+                  target="_blank"
+                  className="anchor-card-dynamic"
+                >
                   <AiFillLinkedin className="nav-item-icon" />
+                </a>{" "}
+                <a
+                  href="https://github.com/i7p7x0"
+                  target="_blank"
+                  className="anchor-card-dynamic"
+                >
                   <AiFillGithub className="nav-item-icon" />
-                  <AiFillInstagram className="nav-item-icon" />
+                </a>{" "}
+                <a
+                  href="https://discord.com/users/i7p7x0#0503"
+                  target="_blank"
+                  className="anchor-card-dynamic"
+                >
                   <FaDiscord className="nav-item-icon" />
-                </span>
-              </Link>
-              <Link
-                className="nav-link"
-                to="#action2"
-                onClick={handleDrawerState}
-              >
-                <span className="nav-link-content">
-                  <AiOutlineDownload className="nav-item-icon" />
-                  Download CV
-                </span>
-              </Link>
+                </a>
+              </span>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

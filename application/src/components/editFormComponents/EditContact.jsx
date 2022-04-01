@@ -40,7 +40,6 @@ const EditContact = (props) => {
   }, []);
 
   const handleFormSubmit = async () => {
-    console.log(contact);
     const contactResponse = await fetch(
       "http://localhost:5000/contact/contactDetails",
       {

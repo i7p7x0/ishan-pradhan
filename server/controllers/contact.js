@@ -5,6 +5,7 @@ const Validations = require("../utils/validateInput");
 const inputError = require("../constants/errors/InputError");
 const fatalError = require("../constants/errors/FatalError");
 const noError = require("../constants/errors/NoError");
+const inboxFullError = require("../constants/errors/InboxFullError");
 
 //----------------- get messages -----------------//
 exports.getMessages = async (req, res, next) => {
@@ -31,7 +32,12 @@ exports.postMessages = async (req, res, next) => {
   } catch (error) {
     return res.json(inputError);
   }
+
   try {
+    const previousMessages = await Message.find();
+    if (previousMessages.length > 100) {
+      return res.json(inboxFullError);
+    }
     await message.save();
   } catch (error) {
     return res.json(fatalError);
@@ -95,7 +101,7 @@ exports.updateContact = async (req, res, next) => {
     freelance: req.body.freelance,
     recruitment: req.body.recruitment,
   });
-  console.log(Validations.validateContact(newContact));
+
   try {
     if (!Validations.validateContact(newContact)) {
       throw new Error("Error");
